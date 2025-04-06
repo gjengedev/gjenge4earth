@@ -1,0 +1,112 @@
+<!-- /Documents/Earth foundation/contact.html --> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Gjenge Earth Foundation - Together for a sustainable future">
+    <title>Contact Us - Gjenge Earth Foundation</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="scripts/contactForm.js" defer></script>
+    <script type="module">
+        import { loadComponents} from './scripts/components/navigation.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponents();
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="header-placeholder"></div>
+
+    <!-- Contact Hero -->
+    <header class="contact-hero">
+        <div class="container">
+            <h1>Get in Touch</h1>
+            <p>Have questions? We'd love to hear from you.</p>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select a topic</option>
+                                <option value="volunteer">Volunteering</option>
+                                <option value="donate">Donations</option>
+                                <option value="partnership">Partnerships</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h3>Visit Us</h3>
+                        <address>
+                            <p>Gjenge Earth Foundation</p>
+                            <p>123 Environmental Way</p>
+                            <p>Nairobi, Kenya</p>
+                        </address>
+                    </div>
+                    <div class="info-card">
+                        <h3>Contact Details</h3>
+                        <p><strong>Email:</strong> 
+                            <a href="mailto:info@gjengeearth.org">info@gjengeearth.org</a>
+                        </p>
+                        <p><strong>Phone:</strong> 
+                            <a href="tel:+254000000000">+254 XXX XXX XXX</a>
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <h3>Office Hours</h3>
+                        <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                        <p>Saturday: 9:00 AM - 1:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div id="map" class="map-container">
+                <!-- Map iframe or integration will go here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+</body>
+</html>

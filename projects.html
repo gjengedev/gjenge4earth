@@ -1,0 +1,112 @@
+ foundation/impact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="See the impact of Gjenge Earth Foundation's environmental initiatives">
+    <title>Our Impact - Gjenge Earth Foundation</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+    <script src="scripts/impact.js" defer></script>
+    <script type="module">
+        import { loadComponents } from './scripts/components/navigation.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponents();
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="header-placeholder"></div>
+
+    <!-- Impact Hero -->
+    <header class="impact-hero">
+        <div class="container">
+            <h1>Our Impact</h1>
+            <p>Measuring our contribution to environmental sustainability</p>
+        </div>
+    </header>
+
+    <!-- Key Metrics -->
+    <section class="metrics-section">
+        <div class="container">
+            <div class="metrics-grid">
+                <div class="metric-card" data-aos="fade-up">
+                    <div class="metric-icon">♻️</div>
+                    <div class="metric-number" data-count="50000">0</div>
+                    <p>Kilograms of Waste Recycled</p>
+                </div>
+                <div class="metric-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="metric-icon">👥</div>
+                    <div class="metric-number" data-count="200">0</div>
+                    <p>Community Members Trained</p>
+                </div>
+                <div class="metric-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="metric-icon">🌱</div>
+                    <div class="metric-number" data-count="15">0</div>
+                    <p>Active Projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Visualization -->
+    <section class="visualization-section">
+        <div class="container">
+            <div class="chart-container">
+                <canvas id="yearlyImpactChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="communityGrowthChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories -->
+    <section class="stories-section">
+        <div class="container">
+            <h2>Success Stories</h2>
+            <div class="stories-grid">
+                <article class="story-card" data-aos="fade-up">
+                    <img src="images/impact/story1.jpg" alt="Community success story" loading="lazy">
+                    <div class="story-content">
+                        <h3>Nairobi Youth Initiative</h3>
+                        <p>Training 50 youth in sustainable waste management</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+                <article class="story-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="images/impact/story2.jpg" alt="Recycling success story" loading="lazy">
+                    <div class="story-content">
+                        <h3>Mombasa Clean Beach</h3>
+                        <p>Collecting 1000kg of plastic waste from beaches</p>
+                        <a href="#" class="read-more">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Be Part of Our Impact</h2>
+            <p>Join us in creating positive environmental change</p>
+            <div class="cta-buttons">
+                <a href="volunteer.html" class="cta-button primary">Get Involved</a>
+                <a href="donate.html" class="cta-button secondary">Support Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+</body>
+</html>

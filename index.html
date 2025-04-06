@@ -1,0 +1,150 @@
+\index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gjenge Earth Foundation - Recycling initiatives empowering communities">
+    <title>Gjenge Earth Foundation</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="scripts/main.js" type="module" defer></script>
+    <script type="module">
+        import { loadComponents } from './scripts/components/navigation.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponents();
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title animate-slide-up">
+                    Transforming Waste,<br>
+                    <span class="highlight">Empowering Communities</span>
+                </h1>
+                <p>
+                    Founded with the goal of transcending the social and environmental impact of Gjenge Makers, 
+                    Earth Foundation is dedicated to improving recycling initiatives and partnering with communities 
+                    to recycle plastics and empower lives.
+                </p>
+                <div class="hero-actions">
+                    <a href="#join" class="cta-button primary">Join Us</a>
+                    <a href="#partner" class="cta-button secondary">Partner with Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="introduction">
+        <div class="container">
+            <h2>About Earth Foundation</h2>
+            <p>
+                Born from the vision of transforming waste into wealth and sustainability, Earth Foundation is 
+                a recycling and manufacturing company that is committed to making a difference. We believe in 
+                the power of community-driven initiatives and are dedicated to creating a healthier planet for future generations.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <div class="feature-grid">
+                <article class="feature-card" data-aos="fade-up">
+                    <div class="feature-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/waste-collection.jpg');">
+                        <div class="feature-icon">♻️</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Waste Collection</h3>
+                        <p>Organized community waste collection and sorting programs</p>
+                    </div>
+                </article>
+                <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/education.jpg');">
+                        <div class="feature-icon">🌱</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Education</h3>
+                        <p>Environmental awareness and sustainable practices training</p>
+                    </div>
+                </article>
+                <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/community.jpg');">
+                        <div class="feature-icon">🤝</div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Community Impact</h3>
+                        <p>Creating employment and sustainable income opportunities</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section class="metrics">
+        <div class="container">
+            <h2>Our Achievements</h2>
+            <div class="metrics-grid">
+                <div class="metric-card" data-aos="fade-up">
+                    <h3 class="metric-value" data-count="100">0</h3>
+                    <p class="metric-label">Tons of Plastic Recycled</p>
+                </div>
+                <div class="metric-card" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="metric-value" data-count="500">0</h3>
+                    <p class="metric-label">Lives Improved</p>
+                </div>
+                <div class="metric-card" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="metric-value" data-count="20">0</h3>
+                    <p class="metric-label">Partners Worldwide</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="join">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Make a Difference?</h2>
+                <p>Join the movement and help us recycle plastics and empower lives.</p>
+                <div class="cta-buttons">
+                    <a href="#join" class="cta-button primary">Join Us</a>
+                    <a href="#partner" class="cta-button secondary">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Earth Foundation. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="our-work.html">Our Work</a></li>
+                    <li><a href="impact.html">Impact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

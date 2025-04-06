@@ -1,0 +1,150 @@
+<!-- work.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Gjenge Earth Foundation's recycling facilities and processes">
+    <title>Our Work - Gjenge Earth Foundation</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="scripts/workInteractions.js" type="module" defer></script>
+    <script type="module">
+        import { loadComponents } from './scripts/components/navigation.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponents();
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="industrial-hero">
+        <div class="conveyor-belt">
+            <div class="recycling-items">
+                <div class="item bottle" data-speed="0.9">
+                    <img src="./images/svg/bottles.svg" alt="">
+                </div>
+                <div class="item can" data-speed="1x">
+                    <img src="./images/svg/plastic-heap.svg" alt="">
+                </div>
+                <div class="item plastic" data-speed="0.75">
+                    <img src="./images/svg/Trashcans.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <h1 class="mechanical-text" data-text="Building Circular Systems">Building Circular Systems</h1>
+    </section>
+
+    <!-- Process Section with Interactive Machines -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">Our Recycling Process</h2>
+            <div class="process-diagram">
+                <div class="factory-model">
+                    <!-- Interactive Machine Elements -->
+                    <div class="machine" data-step="1">
+                        <div class="machine-icon">
+                            <img src="images/MRF/GJenge-229_2__1.png" alt="Collection & Sorting" loading="lazy" length="100px" width="100px">
+                        </div>
+                        <div class="machine-tooltip">Collection & Sorting</div>
+                    </div>
+                    <div class="machine" data-step="2">
+                        <div class="machine-icon">
+                            <img src="images/MRF/Crushers.png" alt="Collection & Sorting" loading="lazy" length="100px" width="100px">
+                        </div>
+                        <div class="machine-tooltip">Crushing</div>
+                    </div>
+                    <div class="machine" data-step="3">
+                        <div class="machine-icon">
+                            <img src="images/MRF/plastic-waste-washing-machine.png" alt="Collection & Sorting" loading="lazy" length="100px" width="100px">
+                        </div>
+                        <div class="machine-tooltip">Processing</div>
+                    </div>
+                    <div class="machine" data-step="4">
+                        <div class="machine-icon">
+                            <img src="images/MRF/crushed-plastic.png" alt="Collection & Sorting" loading="lazy" length="100px" width="100px">
+                        </div>
+                        <div class="machine-tooltip">Final Product</div>
+                    </div>
+                </div>
+                
+                <!-- Content that shows when machines are clicked -->
+                <div class="process-info">
+                    <div class="step-content" data-step="1">
+                        <h3>Collection & Sorting</h3>
+                        <p>We collect and sort various types of plastic waste from our community partners.</p>
+                    </div>
+                    <div class="step-content" data-step="2">
+                        <h3>Shredding Process</h3>
+                        <p>The sorted plastic is shredded into small, uniform pieces for processing.</p>
+                    </div>
+                    <div class="step-content" data-step="3">
+                        <h3>Material Processing</h3>
+                        <p>Crushed plastic undergoes cleaning and processing to ensure quality.</p>
+                    </div>
+                    <div class="step-content" data-step="4">
+                        <h3>Final Products</h3>
+                        <p>Processed materials are ready for production use </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section class="materials-section">
+        <div class="container">
+            <h2>Our Materials Processing </h2>
+            <div class="material-showcase">
+                <div class="material-grid">
+                    <div class="material-card" data-material="PET">
+                        <div class="material-icon">🔄</div>
+                        <h3>Baling</h3>
+                        <p>Polyethylene terephthalate from bottles and containers</p>
+                    </div>
+                    <div class="material-card" data-material="HDPE">
+                        <div class="material-icon">♻️</div>
+                        <h3>Crushing</h3>
+                        <p>High-density polyethylene from household products</p>
+                    </div>
+                    <div class="material-card" data-material="HDPE">
+                        <div class="material-icon">♻️</div>
+                        <h3>Agglomeration</h3>
+                        <p>High-density polyethylene from household products</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partner Section -->
+    <section class="partner-section">
+        <div class="container">
+            <h2>Our Partners</h2>
+            <div class="partner-grid">
+                <article class="partner-card" data-aos="fade-up">
+                    <img src="images/partners/partner1.jpg" alt="Partner organization" loading="lazy">
+                    <div class="partner-content">
+                        <h3>Nairobi CBO Collective</h3>
+                        <p>Equipped with 10 recycling machines</p>
+                    </div>
+                </article>
+                <!-- Additional partner cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+</body>
+</html>

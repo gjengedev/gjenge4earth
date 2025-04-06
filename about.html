@@ -1,0 +1,112 @@
+<!-- /Documents/Earth foundation/about.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Gjenge Earth Foundation's journey in sustainable waste management and community empowerment">
+    <title>About Us - Gjenge Earth Foundation</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="scripts/aboutAnimations.js" defer></script>
+    <script type="module">
+        import  { loadComponents } from './scripts/components/navigation.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponents();
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <header class="about-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title animate-slide-up">Our Journey in <span class="highlight mechanical-text">Sustainable Change</span></h1>
+            <p class="hero-subtitle">Building a cleaner future through community-driven initiatives</p>
+        </div>
+    </header>
+
+    <!-- Mission & Vision -->
+    <section class="mission-section" data-aos="fade-up">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <h2>Our Mission</h2>
+                    <p>To revolutionize waste management through innovative recycling solutions while empowering local communities and preserving our environment for future generations.</p>
+                </div>
+                <div class="vision-card">
+                    <h2>Our Vision</h2>
+                    <p>A world where waste becomes a resource, communities thrive through sustainable practices, and environmental consciousness drives every action.</p>
+                </div>
+                <div class="uvp-card">
+                    <h2>Our Unique Value Proposition</h2>                    
+                    <p>A world where waste becomes a resource, communities thrive through sustainable practices, and environmental consciousness drives every action.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018</div>
+                        <h3>The Beginning</h3>
+                        <p>Started as a community recycling initiative in Nairobi</p>
+                        <img src="images/MRF/bumper2.png" alt="Gjenge Earth Foundation founders" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020</div>
+                        <h3>First Facility</h3>
+                        <p>Launched our first Material Recovery Facility</p>
+                        <img src="images/MRF/bumpers.png" alt="Our first recycling facility" loading="lazy">
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2025</div>
+                        <h3>Growing Impact</h3>
+                        <p>Expanded operations to multiple counties across Kenya</p>
+                        <img src="images/MRF/bottletops.jpg" alt="Our first recycling facility" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" data-aos="fade-up">
+        <div class="container">
+            <h2 class="section-title">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="images/team/leader1.jpg" alt="Team member" loading="lazy">
+                    <h3>Jane Doe</h3>
+                    <p>Executive Director</p>
+                </div>
+                <!-- Add more team members as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!-- get-involved.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Involved - Gjenge Earth Foundation</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script type="module">
+        import { loadComponents } from './scripts/components/navigation.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            loadComponents();
+        });
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+     <div id="header-placeholder"></div>
+    <!-- Hero Commitment Wall -->
+     
+    <section class="commitment-hero">
+        <div class="pledge-grid">
+            <div class="pledge-card" data-pledge="donor">
+                <div class="pledge-sparkles"></div>
+                <h2>I Want to Donate</h2>
+                <div class="pledge-commitment"></div>
+            </div>
+            <div class="pledge-card" data-pledge="partner">
+                <div class="pledge-sparkles"></div>
+                <h2>I Want to Partner</h2>
+                <div class="pledge-commitment"></div>
+            </div>
+            <!-- Add Volunteer Card -->
+        </div>
+    </section>
+
+    <!-- Interactive Donation Flow -->
+    <section class="donation-path">
+        <div class="donation-stepper">
+            <div class="step-indicator active" data-step="1">Amount</div>
+            <div class="step-indicator" data-step="2">Details</div>
+            <div class="step-indicator" data-step="3">Confirm</div>
+        </div>
+
+        <div class="donation-options">
+            <div class="amount-card" data-amount="50">
+                <div class="amount-badge">Most Impact</div>
+                <h3>$50</h3>
+                <p>Supports 1 waste collector for a week</p>
+            </div>
+            <!-- Other amount cards -->
+        </div>
+    </section>
+
+    <!-- Partnership Tier Visualizer -->
+    <div class="tier-comparison">
+        <div class="tier-card" data-tier="supporter">
+            <div class="tier-progress"></div>
+            <h3>Community Supporter</h3>
+            <button class="tier-cta">Join</button>
+        </div>
+        <!-- Add other tiers -->
+    </div>
+
+    <!-- Volunteer Skill Matrix -->
+    <div class="skill-grid">
+        <div class="skill-node" data-skill="education">
+            <div class="skill-progress"></div>
+            <h4>Community Education</h4>
+        </div>
+        <!-- Add other skills -->
+    </div>
+
+    <!-- Impact Simulator -->
+    <div class="impact-calculator">
+        <div class="simulator-visual">
+            <div class="plastic-counter">0</div>
+            <div class="tree-equivalent">= 0 Trees</div>
+        </div>
+        <input type="range" class="donation-slider" min="0" max="1000">
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/involvementInteractions.js"></script>
+</body>
+</html>
