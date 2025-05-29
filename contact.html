@@ -10,6 +10,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
@@ -71,23 +72,23 @@
                     <div class="info-card">
                         <h3>Visit Us</h3>
                         <address>
-                            <p>Gjenge Earth Foundation</p>
-                            <p>123 Environmental Way</p>
+                            <p>Gjenge 4 Earth</p>
+                            <p>Enterprise Road</p>
                             <p>Nairobi, Kenya</p>
                         </address>
                     </div>
                     <div class="info-card">
                         <h3>Contact Details</h3>
                         <p><strong>Email:</strong> 
-                            <a href="mailto:info@gjengeearth.org">info@gjengeearth.org</a>
+                            <a href="mailto:info@gjenge4earth.co.ke">info@gjengeearth.org</a>
                         </p>
                         <p><strong>Phone:</strong> 
-                            <a href="tel:+254000000000">+254 XXX XXX XXX</a>
+                            <a href="tel:+254000000000">+254 758 671 491</a>
                         </p>
                     </div>
                     <div class="info-card">
                         <h3>Office Hours</h3>
-                        <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                        <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
                         <p>Saturday: 9:00 AM - 1:00 PM</p>
                         <p>Sunday: Closed</p>
                     </div>
@@ -99,14 +100,24 @@
     <!-- Map Section -->
     <section class="map-section">
         <div class="container">
-            <div id="map" class="map-container">
-                <!-- Map iframe or integration will go here -->
-            </div>
+            <div id="map" class="map-container" style="align-items: center; justify-content: center;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d892.2105215952988!2d36.837642145644985!3d-1.3034271069851924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ske!4v1745998540053!5m2!1sen!2ske" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>
 
+    <!-- Footer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('components/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+                });
+        });
+        </script>
+    
 </body>
 </html>

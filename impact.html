@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
@@ -24,16 +25,23 @@
     </script>
 </head>
 <body>
+    <!-- Background Overlay for Mobile Popup -->
+    <div class="sdg-overlay" id="sdg-overlay"></div>
+
     <!-- Navigation -->
     <div id="header-placeholder"></div>
 
     <!-- Impact Hero -->
-    <header class="impact-hero">
+    <section class="hero">
         <div class="container">
-            <h1 data-aos="fade-up">Our Impact</h1>
-            <p data-aos="fade-up" data-aos-delay="100">Measuring our contribution to environmental sustainability</p>
+            <div class="hero-content"
+                <h1 class="hero-title animate-slide-up">Our Impact</h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Measuring our contribution to environmental sustainability
+                </p>
+            </div>
         </div>
-    </header>
+    </section>
 
     <!-- Key Metrics -->
     <section class="metrics-section">
@@ -44,17 +52,48 @@
         </div>
     </section>
 
+    <!-- SDG Focus Areas -->
+    <section class="sdg-focus-section">
+        <div class="container">
+            <h2>Our SDG Focus Areas</h2>
+            <div class="sdg-grid">
+                <img src="images/SDGs/sdg1.png" alt="SDG 1: No Poverty" data-sdg="1" class="sdg-icon">
+                <img src="images/SDGs/sdg5.png" alt="SDG 5: Gender Equality" data-sdg="5" class="sdg-icon">
+                <img src="images/SDGs/sdg8.png" alt="SDG 8: Decent Work and Economic Growth" data-sdg="8" class="sdg-icon">
+                <img src="images/SDGs/sdg11.png" alt="SDG 11: Sustainable Cities and Communities" data-sdg="11" class="sdg-icon">
+                <img src="images/SDGs/sdg12.png" alt="SDG 12: Responsible Consumption and Production" data-sdg="12" class="sdg-icon">
+            </div>
+            <!-- Container for the detail card (popup on mobile, inline on desktop) -->
+            <div class="sdg-detail-container" id="sdg-detail-wrapper">
+                <div class="sdg-detail-card">
+                    <button class="sdg-close-btn" id="sdg-close-btn" aria-label="Close SDG details">&times;</button>
+                    <div class="sdg-card-content">
+                        <img src="" alt="SDG Detail Image" class="sdg-detail-image">
+                        <div class="sdg-detail-text">
+                            <h3 class="sdg-detail-title"></h3>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="sdg-nav-buttons">
+                        <button class="sdg-nav-btn prev" id="sdg-prev-btn" aria-label="Previous SDG">‹</button>
+                        <button class="sdg-nav-btn next" id="sdg-next-btn" aria-label="Next SDG">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Impact Visualization -->
     <section class="visualization-section" data-aos="fade-up">
         <div class="container">
             <h2>Our Growth Over Time</h2>
             <div class="charts-grid">
                 <div class="chart-container">
-                    <h3>Yearly Impact</h3>
+                    <h3>Plastic Recycled</h3>
                     <canvas id="yearlyImpactChart"></canvas>
                 </div>
                 <div class="chart-container">
-                    <h3>Community Growth</h3>
+                    <h3>Jobs created </h3>
                     <canvas id="communityGrowthChart"></canvas>
                 </div>
             </div>
@@ -94,5 +133,16 @@
             offset: 100
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('components/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+                });
+        });
+    </script>
+    
 </body>
 </html>

@@ -5,8 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Get Involved - Gjenge Earth Foundation</title>
+
+    <!-- Links -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script type="module">
@@ -87,5 +92,9 @@
 
     <script src="scripts/main.js"></script>
     <script src="scripts/involvementInteractions.js"></script>
+    <script type="module">
+        import { loadComponent } from './scripts/components.js';
+        loadComponent('#footer-placeholder', 'components/footer.html');
+      </script>
 </body>
 </html>

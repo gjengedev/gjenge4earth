@@ -11,10 +11,14 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="scripts/main.js" type="module" defer></script>
     <script src="scripts/aboutAnimations.js" defer></script>
     <script type="module">
         import  { loadComponents } from './scripts/components/navigation.js';
@@ -108,5 +112,17 @@
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>
+
+    <!-- Footer -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('components/footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-placeholder').innerHTML = html;
+                });
+        });
+        </script>
+    
 </body>
 </html>

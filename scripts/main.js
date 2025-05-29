@@ -16,28 +16,31 @@ function animateValue(element, target, duration = 2000) {
     requestAnimationFrame(update);
 }
 
+function createObserver() {
+    return new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+}
+
 // Scroll and Animation Observers are in animations and metrics
 
 // Parallax Effect
 const handleParallax = () => {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
+    // Select all hero sections
+    const heroes = document.querySelectorAll('.hero, .about-hero, .contact-hero, .projects-hero, .impact-hero');
+    if (!heroes.length) return;
 
     window.addEventListener('scroll', () => {
         const scrolled = window.scrollY;
-        hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
+        heroes.forEach(hero => {
+            hero.style.backgroundPositionY = `${scrolled * 0.5}px`;
+        });
     }, { passive: true });
-};
-
-// Mobile Navigation
-const initMobileNav = () => {
-    const mobileMenu = document.querySelector('.mobile-menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-
-    mobileMenu?.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        mobileMenu.classList.toggle('open');
-    });
 };
 
 // Initialize everything when DOM is ready
@@ -49,11 +52,10 @@ document.addEventListener('DOMContentLoaded', () => {
         offset: 100
     });
 
-    // Initialize observers
+    // Reveal on scroll observer
     const observer = createObserver();
-    document.querySelectorAll('.metric-card').forEach(card => observer.observe(card));
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
 
     // Initialize other features
-    initMobileNav();
     handleParallax();
 });
