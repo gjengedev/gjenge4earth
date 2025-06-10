@@ -6,9 +6,12 @@
     <meta name="description" content="Gjenge Earth Foundation - Recycling initiatives empowering communities">
     <title>Gjenge Earth Foundation</title>
     
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Styles -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/animations.css">
+    <!-- <link rel="stylesheet" href="styles/main.css"> -->
+    <!-- <link rel="stylesheet" href="styles/animations.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -31,104 +34,166 @@
     <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero bg-dark text-light py-5">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title animate-slide-up">
-                    Transforming Waste,<br>
-                    <span class="highlight">Empowering Communities</span>
-                </h1>
-                <p class="hero-subtitle">
-                    Founded with the goal of transcending the social and environmental impact of Gjenge Makers, 
-                    Gjenge 4 Earth is dedicated to improving recycling initiatives and partnering with communities 
-                    to recycle plastics and empower lives.
-                </p>
-                <div class="hero-actions">
-                    <a href="#join" class="cta-button primary">Join Us</a>
-                    <a href="#partner" class="cta-button secondary">Partner with Us</a>
+            <div class="row justify-content-center align-items-center text-center">
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold animate-slide-up">
+                        Transforming Waste,<br>
+                        <span class="text-primary">Empowering Communities</span>
+                    </h1>
+                    <p class="lead my-4">
+                        Founded with the goal of transcending the social and environmental impact of Gjenge Makers, 
+                        Gjenge 4 Earth is dedicated to improving recycling initiatives and partnering with communities 
+                        to recycle plastics and empower lives.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#join" class="btn btn-primary btn-lg me-2">Join Us</a>
+                        <a href="#partner" class="btn btn-outline-light btn-lg">Partner with Us</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Introduction Section -->
-    <section class="introduction">
+    <section class="introduction py-5">
         <div class="container">
-            <h2>About Earth Foundation</h2>
-            <p>
-                Born from the vision of transforming waste into wealth and sustainability, Earth Foundation is 
-                a recycling and manufacturing company that is committed to making a difference. We believe in 
-                the power of community-driven initiatives and are dedicated to creating a healthier planet for future generations.
-            </p>
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2>About Gjenge 4 Earth</h2>
+                    <p class="lead">
+                        Born from the vision of transforming waste into wealth and sustainability, Earth Foundation is 
+                        a recycling and manufacturing company that is committed to making a difference. We believe in 
+                        the power of community-driven initiatives and are dedicated to creating a healthier planet for future generations.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+    <section class="features py-5 bg-light">
         <div class="container">
-            <h2 class="section-title">What We Do</h2>
-            <div class="feature-grid">
-                <article class="feature-card" data-aos="fade-up">
-                    <div class="feature-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/waste-collection.jpg');">
-                        <div class="feature-icon">♻️</div>
+            <h2 class="text-center mb-5">What We Do</h2>
+            <div class="row g-4">
+                <div class="col-md-4 d-flex align-items-stretch" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div style="height: 220px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Site_pics/20250519_130157.jpg'); background-position: center; background-size: cover;" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Waste Collection</h3>
+                            <p class="card-text">Organized community waste collection and sorting programs</p>
+                        </div>
                     </div>
-                    <div class="feature-content">
-                        <h3>Waste Collection</h3>
-                        <p>Organized community waste collection and sorting programs</p>
+                </div>
+                <div class="col-md-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                         <div style="height: 220px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Site_pics/training.jpg'); background-position: center; background-size: cover;" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Education</h3>
+                            <p class="card-text">Environmental awareness and sustainable practices training</p>
+                        </div>
                     </div>
-                </article>
-                <article class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/education.jpg');">
-                        <div class="feature-icon">🌱</div>
+                </div>
+                <div class="col-md-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <div style="height: 220px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Site_pics/Workshop.jpg'); background-position: center; background-size: cover;" class="card-img-top">
+                        </div>
+                        <div class="card-body text-center">
+                            <h3 class="card-title">Community Impact</h3>
+                            <p class="card-text">Creating employment and sustainable income opportunities</p>
+                        </div>
                     </div>
-                    <div class="feature-content">
-                        <h3>Education</h3>
-                        <p>Environmental awareness and sustainable practices training</p>
-                    </div>
-                </article>
-                <article class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/community.jpg');">
-                        <div class="feature-icon">🤝</div>
-                    </div>
-                    <div class="feature-content">
-                        <h3>Community Impact</h3>
-                        <p>Creating employment and sustainable income opportunities</p>
-                    </div>
-                </article>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Metrics Section -->
-    <section class="metrics">
+    <section class="metrics py-5">
         <div class="container">
-            <h2>Our Achievements</h2>
-            <div class="metrics-grid">
-                <div class="metric-card" data-aos="fade-up">
-                    <h3 class="metric-value" data-count="100">0</h3>
-                    <p class="metric-label">Tons of Plastic Recycled</p>
+            <h2 class="text-center mb-5">Our Achievements</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card p-4 h-100">
+                        <h3 class="display-5 fw-bold" data-count="250">250</h3>
+                        <p class="lead">Tons of Plastic Recycled</p>
+                    </div>
                 </div>
-                <div class="metric-card" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="metric-value" data-count="500">0</h3>
-                    <p class="metric-label">Lives Improved</p>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card p-4 h-100">
+                        <h3 class="display-5 fw-bold" data-count="300">300</h3>
+                        <p class="lead">Lives Improved</p>
+                    </div>
                 </div>
-                <div class="metric-card" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="metric-value" data-count="20">0</h3>
-                    <p class="metric-label">Partners Worldwide</p>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card p-4 h-100">
+                        <h3 class="display-5 fw-bold" data-count="10">10</h3>
+                        <p class="lead">Partners Worldwide</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section" id="join">
+    <!-- Partners Carousel -->
+    <section class="partners-section py-5 bg-light">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Make a Difference?</h2>
-                <p>Join the movement and help us recycle plastics and empower lives.</p>
-                <div class="cta-buttons">
-                    <a href="#join" class="cta-button primary">Join Us</a>
-                    <a href="#partner" class="cta-button secondary">Partner With Us</a>
+            <h2 class="text-center mb-5">Our Partners</h2>
+            <div id="partnersCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-auto"><img src="images/partners/bounty logo (1).png" class="d-block" alt="Bounty Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                            <div class="col-auto"><img src="images/partners/cocacola-logo (1).jpg" class="d-block" alt="Coca-Cola Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                            <div class="col-auto"><img src="images/partners/download (1) (1).png" class="d-block" alt="Partner Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-auto"><img src="images/partners/Habitat for humanity (1).png" class="d-block" alt="Habitat for Humanity Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                            <div class="col-auto"><img src="images/partners/images (1).jpeg" class="d-block" alt="Partner Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                            <div class="col-auto"><img src="images/partners/London-Distillers (1).png" class="d-block" alt="London Distillers Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                        </div>
+                    </div>
+                     <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-auto"><img src="images/partners/ministry_of_Transport (1).png" class="d-block" alt="Ministry of Transport Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                            <div class="col-auto"><img src="images/partners/start somewhere (1).png" class="d-block" alt="Start Somewhere Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                            <div class="col-auto"><img src="images/partners/UNEP - Transparent_1 (1).png" class="d-block" alt="UNEP Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                             <div class="col-auto"><img src="images/partners/victory-farms (1).png" class="d-block" alt="Victory Farms Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#partnersCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#partnersCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5 bg-primary text-light" id="join">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2>Ready to Make a Difference?</h2>
+                    <p class="lead">Join the movement and help us recycle plastics and empower lives.</p>
+                    <div class="mt-4">
+                        <a href="#join" class="btn btn-light btn-lg me-2">Join Us</a>
+                        <a href="#partner" class="btn btn-outline-light btn-lg">Partner With Us</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,6 +202,8 @@
     <!-- Footer -->
     <div id="footer-placeholder"></div>
 
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Footer -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
