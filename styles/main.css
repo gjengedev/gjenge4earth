@@ -127,7 +127,8 @@ html, body {
     --bg-overlay: rgba(21, 34, 56, 0.95);
     --bg-glass: rgba(255, 255, 255, 0.05);
     --bg-muted: #152238;
-      /* Text Colors */
+    
+    /* Text Colors */
     --text-primary: #f5f5f5;
     --text-secondary: #d0d0d0;
     --text-muted: #888888;
@@ -135,15 +136,16 @@ html, body {
     --text-on-primary: #ffffff;
     --text-on-surface: #f5f5f5;
       /* Navigation */
-    --nav-bg: rgba(17, 17, 17, 0.85);
-    --nav-text: #f5f5f5;
+    --nav-bg: rgba(21, 34, 56, 0.95);
+    --nav-text: #e2e8f0;
     --nav-text-hover: var(--brand-accent);
-    --nav-border: rgba(255, 255, 255, 0.08);
-      /* Cards & Components */
-    --card-bg: rgba(26, 26, 26, 0.8);
-    --card-border: rgba(255, 255, 255, 0.08);
-    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-    --card-hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    --nav-border: rgba(255, 255, 255, 0.1);
+    
+    /* Cards & Components */
+    --card-bg: var(--bg-surface);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --card-hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
     
     /* Buttons */
     --btn-primary-bg: var(--brand-primary);
@@ -151,13 +153,13 @@ html, body {
     --btn-secondary-bg: var(--brand-secondary);
     --btn-secondary-hover: #2e86d6;
       /* Borders */
-    --border-color: #2a2a2a;
-    --border-color-light: #1a1a1a;
-    --border-color-dark: #888888;
+    --border-color: #354560;
+    --border-color-light: #283650;
+    --border-color-dark: #4a5d7a;
     
     /* Interactive States */
-    --hover-overlay: rgba(255, 255, 255, 0.05);
-    --active-overlay: rgba(255, 255, 255, 0.1);
+    --hover-overlay: rgba(255, 255, 255, 0.08);
+    --active-overlay: rgba(255, 255, 255, 0.12);
     --focus-color: var(--brand-accent);
     --selection-bg: rgba(32, 201, 151, 0.25);
 }
