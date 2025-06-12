@@ -1,4 +1,3 @@
-<!-- /Documents/Earth foundation/contact.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,23 +8,30 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Styles -->
-    <!-- <link rel="stylesheet" href="styles/main.css"> -->
-    <!-- <link rel="stylesheet" href="styles/animations.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Our Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Scripts -->
-    <!-- <script src="scripts/contactForm.js" defer></script> -->
-    <!--
-    <script type=\"module\">
-        import { loadComponents} from \'./scripts/components/navigation.js\';
-        document.addEventListener(\'DOMContentLoaded\', () => {
-            loadComponents();
-        });
+    <script>
+        // Bootstrap native theme initialization - runs immediately to prevent flash
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        })();
     </script>
-    -->
+    </script>
+    
+    <style>        body {
+            font-family: 'Poppins', sans-serif;
+        }    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -126,18 +132,48 @@
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Footer -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    <script>        document.addEventListener('DOMContentLoaded', function() {
             fetch('components/header.html')
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById('header-placeholder').innerHTML = html;
-                });
+                    const headerPlaceholder = document.getElementById('header-placeholder');
+                    headerPlaceholder.innerHTML = html;
+                    
+                    // Execute scripts in the loaded header
+                    const scripts = headerPlaceholder.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        script.remove();
+                    });
+                })
+                .catch(error => console.error('Error loading header:', error));
+                
             fetch('components/footer.html')
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById('footer-placeholder').innerHTML = html;
-                });
+                    const footerPlaceholder = document.getElementById('footer-placeholder');
+                    footerPlaceholder.innerHTML = html;
+                    
+                    // Execute scripts in the loaded footer
+                    const scripts = footerPlaceholder.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        script.remove();
+                    });
+                })
+                .catch(error => console.error('Error loading footer:', error));
         });
         // Basic form validation (Bootstrap handles most of it via attributes)
         // You can add more sophisticated validation here if needed.

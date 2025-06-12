@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Gjenge Foundation's Material Recovery Facility scaling strategy and impact projections">
+    <title>MRF Strategy - Gjenge Earth Foundation</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Our Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        // Bootstrap native theme initialization - runs immediately to prevent flash
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        })();
+    </script>
+    
+    <style>        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        /* Ensure proper Bootstrap theme inheritance */
+        .card, .btn, .alert {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .metric-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.125);
+        }
+        
+        [data-bs-theme="dark"] .metric-card {
+            border-color: rgba(255,255,255,0.125);
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        }
+        
+        [data-bs-theme="dark"] .metric-card:hover {
+            box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.1);
+        }
+          .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 2rem 0;
+            max-width: 100%;
+        }
+        
+        .chart-container canvas {
+            max-width: 100% !important;
+            height: auto !important;
+        }
+        
+        .impact-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #0d6efd, #20c997);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .progress-custom {
+            height: 8px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: #0d6efd;
+            border-radius: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 0.45rem;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: #dee2e6;
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+          @media (max-width: 768px) {
+            .impact-number {
+                font-size: 2rem;
+            }
+            
+            .chart-container {
+                height: 250px;
+                margin: 1rem 0;
+            }
+            
+            .metric-card .card-body {
+                padding: 1rem;
+            }
+        }
+        
+        /* Loading states for charts */
+        .chart-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+            opacity: 0.7;
+        }
+        
+        .chart-loading::after {
+            content: "Loading chart...";
+            color: var(--bs-text-muted);
+        }
+        
+        /* Prevent FOUC (Flash of Unstyled Content) */
+        .chart-container canvas {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .chart-container canvas.loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div id="header-placeholder"></div>
+
+    <!-- Hero Section -->
+    <section class="py-5 text-center bg-light">
+        <div class="container">
+            <h1 class="display-4 mb-4" data-aos="fade-up">Material Recovery Facility Strategy</h1>
+            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+                Scaling sustainable waste management systems through strategic partnerships and community empowerment
+            </p>
+            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-10">
+                    <div class="alert alert-info border-0 shadow-sm">
+                        <i class="bi bi-info-circle-fill me-2"></i>
+                        <strong>Our Vision:</strong> Build a self-sustaining circular economy by scaling plastic recovery operations, creating livelihoods and reducing waste pollution through Material Recovery Facilities.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Statistics Overview -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Strategy at a Glance</h2>
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card metric-card h-100 text-center shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="bi bi-building fs-1 text-primary mb-3"></i>
+                            <div class="impact-number">15+</div>
+                            <p class="text-muted mb-0">MRFs by Year 5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card metric-card h-100 text-center shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="bi bi-people-fill fs-1 text-success mb-3"></i>
+                            <div class="impact-number">500+</div>
+                            <p class="text-muted mb-0">Jobs Created</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card metric-card h-100 text-center shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="bi bi-recycle fs-1 text-info mb-3"></i>
+                            <div class="impact-number">200K</div>
+                            <p class="text-muted mb-0">Tons Recycled/Year</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card metric-card h-100 text-center shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="bi bi-gender-female fs-1 text-warning mb-3"></i>
+                            <div class="impact-number">75%</div>
+                            <p class="text-muted mb-0">Women & Youth Employment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Analysis with Visual Data -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Market Analysis</h2>
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-danger text-white">
+                            <h5 class="mb-0"><i class="bi bi-exclamation-triangle-fill me-2"></i>The Problem</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center mb-4">
+                                <canvas id="wasteManagementChart" class="chart-container"></canvas>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h4 class="text-danger">400K+</h4>
+                                    <small class="text-muted">Tons of plastic waste generated annually in Kenya</small>
+                                </div>
+                                <div class="col-6">
+                                    <h4 class="text-warning">93%</h4>
+                                    <small class="text-muted">Mismanaged plastic waste</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="bi bi-lightbulb-fill me-2"></i>The Opportunity</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <i class="bi bi-arrow-up-circle-fill text-success me-2"></i>
+                                    <strong>Growing demand</strong> for recycled plastic products from manufacturers
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-shield-check-fill text-primary me-2"></i>
+                                    <strong>EPR regulations</strong> requiring corporations to collect and recycle plastic waste
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-graph-up-arrow text-info me-2"></i>
+                                    <strong>ESG compliance</strong> driving sustainable supply chain demand
+                                </li>
+                                <li class="mb-3">
+                                    <i class="bi bi-people-fill text-warning me-2"></i>
+                                    <strong>Collaboration model</strong> supporting existing recyclers instead of competing
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Timeline -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Implementation Timeline</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card shadow-sm border-0" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-body p-4">
+                            <div class="timeline">
+                                <div class="timeline-item mb-4">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h5 class="text-primary mb-2">Phase 1 (Years 1-2)</h5>
+                                            <p class="mb-2">Establish foundation operations</p>
+                                            <ul class="small text-muted">
+                                                <li>Set up 2 MRFs (1 per year)</li>
+                                                <li>Train partners and develop operational models</li>
+                                                <li>Secure long-term supplier agreements</li>
+                                                <li>Partner with impact investors</li>
+                                            </ul>
+                                        </div>
+                                        <span class="badge bg-primary">2 MRFs</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item mb-4">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h5 class="text-success mb-2">Phase 2 (Years 3-4)</h5>
+                                            <p class="mb-2">Scale and systematize operations</p>
+                                            <ul class="small text-muted">
+                                                <li>Develop franchise model for replication</li>
+                                                <li>Scale to 4 more MRFs (2 per year)</li>
+                                                <li>Expand government and NGO partnerships</li>
+                                                <li>Improve machinery efficiency through R&D</li>
+                                            </ul>
+                                        </div>
+                                        <span class="badge bg-success">6 Total MRFs</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <h5 class="text-info mb-2">Phase 3 (Year 5+)</h5>
+                                            <p class="mb-2">Achieve sustainability and regional expansion</p>
+                                            <ul class="small text-muted">
+                                                <li>Financial self-sufficiency through multiple revenue streams</li>
+                                                <li>Expand to 4 MRFs per year</li>
+                                                <li>Create regional model beyond Kenya</li>
+                                                <li>Full circular economy integration</li>
+                                            </ul>
+                                        </div>
+                                        <span class="badge bg-info">15+ MRFs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Projections -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">5-Year Impact Projections</h2>
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="bi bi-graph-up-arrow me-2"></i>MRF Scaling Timeline</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="mrfScalingChart" class="chart-container"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="bi bi-people-fill me-2"></i>Job Creation Impact</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="jobCreationChart" class="chart-container"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Environmental Impact Metrics -->
+            <div class="row g-4 mt-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card text-center h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="bi bi-cloud-minus-fill fs-1 text-success mb-3"></i>
+                            <h3 class="display-6 fw-bold text-success">168K</h3>
+                            <p class="text-muted">Tons CO₂ Emissions Avoided/Year</p>
+                            <div class="progress progress-custom">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card text-center h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="bi bi-arrow-down-circle-fill fs-1 text-warning mb-3"></i>
+                            <h3 class="display-6 fw-bold text-warning">30%</h3>
+                            <p class="text-muted">Reduction in Mismanaged Waste</p>
+                            <div class="progress progress-custom">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="card text-center h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <i class="bi bi-gender-female fs-1 text-info mb-3"></i>
+                            <h3 class="display-6 fw-bold text-info">375+</h3>
+                            <p class="text-muted">Women & Youth Jobs Created</p>
+                            <div class="progress progress-custom">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Model -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Partnership Model</h2>
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0"><i class="bi bi-handshake-fill me-2"></i>Strategic Partnerships</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-3">
+                                <div class="col-6">
+                                    <div class="text-center p-3 bg-light rounded">
+                                        <i class="bi bi-building fs-2 text-primary mb-2"></i>
+                                        <h6>Government</h6>
+                                        <small class="text-muted">Regulation, compliance, land access</small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="text-center p-3 bg-light rounded">
+                                        <i class="bi bi-heart-fill fs-2 text-danger mb-2"></i>
+                                        <h6>NGOs & Donors</h6>
+                                        <small class="text-muted">Facility setup and expansion</small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="text-center p-3 bg-light rounded">
+                                        <i class="bi bi-factory fs-2 text-success mb-2"></i>
+                                        <h6>Producers</h6>
+                                        <small class="text-muted">EPR compliance support</small>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="text-center p-3 bg-light rounded">
+                                        <i class="bi bi-graph-up fs-2 text-warning mb-2"></i>
+                                        <h6>Investors</h6>
+                                        <small class="text-muted">Impact investment focus</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0"><i class="bi bi-check-circle-fill me-2"></i>Partnership Criteria</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-3 d-flex align-items-start">
+                                    <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                                    <div>
+                                        <strong>Processing Capacity:</strong><br>
+                                        <small class="text-muted">Must process at least 2 tons of plastic waste per month</small>
+                                    </div>
+                                </li>
+                                <li class="mb-3 d-flex align-items-start">
+                                    <i class="bi bi-geo-alt-fill text-primary me-3 mt-1"></i>
+                                    <div>
+                                        <strong>Location:</strong><br>
+                                        <small class="text-muted">Located in urban or peri-urban areas</small>
+                                    </div>
+                                </li>
+                                <li class="mb-3 d-flex align-items-start">
+                                    <i class="bi bi-house-fill text-info me-3 mt-1"></i>
+                                    <div>
+                                        <strong>Space Requirements:</strong><br>
+                                        <small class="text-muted">Operational space of at least 70 square meters</small>
+                                    </div>
+                                </li>
+                                <li class="mb-0 d-flex align-items-start">
+                                    <i class="bi bi-shield-check-fill text-warning me-3 mt-1"></i>
+                                    <div>
+                                        <strong>Compliance:</strong><br>
+                                        <small class="text-muted">Must be compliant with recycling regulations</small>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Management -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Risk Management & Mitigation</h2>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-danger text-white">
+                            <h6 class="mb-0"><i class="bi bi-exclamation-triangle-fill me-2"></i>Risk: Unstable Donor Funding</h6>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-success mb-0"><i class="bi bi-shield-check me-2"></i><strong>Mitigation:</strong> Diversify revenue through plastic sales and machine leasing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-warning text-dark">
+                            <h6 class="mb-0"><i class="bi bi-exclamation-triangle-fill me-2"></i>Risk: Competition for Plastic Waste</h6>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-success mb-0"><i class="bi bi-shield-check me-2"></i><strong>Mitigation:</strong> Establish long-term contracts with waste suppliers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-info text-white">
+                            <h6 class="mb-0"><i class="bi bi-exclamation-triangle-fill me-2"></i>Risk: Legal & Compliance Challenges</h6>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-success mb-0"><i class="bi bi-shield-check me-2"></i><strong>Mitigation:</strong> Provide compliance training for partners</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-secondary text-white">
+                            <h6 class="mb-0"><i class="bi bi-exclamation-triangle-fill me-2"></i>Risk: Operational Inefficiencies</h6>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-success mb-0"><i class="bi bi-shield-check me-2"></i><strong>Mitigation:</strong> Implement strict monitoring and evaluation systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 text-center">
+        <div class="container">
+            <h2 data-aos="fade-up">Join Our MRF Strategy</h2>
+            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+                Partner with us to scale sustainable waste management and create lasting community impact.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <a href="get-involved.html#partnership-tiers" class="btn btn-primary btn-lg mx-2">Become a Partner</a>
+                <a href="contact.html" class="btn btn-outline-primary btn-lg mx-2">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>    <script>
+        // Global chart storage for proper cleanup
+        let chartInstances = {};
+        
+        // Utility function to get current theme colors
+        function getThemeColors() {
+            const isDarkTheme = document.documentElement.getAttribute('data-bs-theme') === 'dark';
+            return {
+                textColor: isDarkTheme ? '#ffffff' : '#333333',
+                gridColor: isDarkTheme ? '#444444' : '#e0e0e0',
+                borderColor: isDarkTheme ? '#333' : '#fff'
+            };
+        }
+        
+        // Function to destroy existing charts
+        function destroyCharts() {
+            Object.values(chartInstances).forEach(chart => {
+                if (chart && typeof chart.destroy === 'function') {
+                    chart.destroy();
+                }
+            });
+            chartInstances = {};
+        }
+          // Function to initialize charts with current theme
+        function initializeCharts() {
+            const colors = getThemeColors();
+            
+            // Waste Management Chart (Doughnut)
+            const wasteCanvas = document.getElementById('wasteManagementChart');
+            if (wasteCanvas) {
+                const wasteCtx = wasteCanvas.getContext('2d');
+                chartInstances.wasteChart = new Chart(wasteCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Mismanaged Waste', 'Recycled Waste'],
+                        datasets: [{
+                            data: [93, 7],
+                            backgroundColor: ['#dc3545', '#28a745'],
+                            borderWidth: 2,
+                            borderColor: colors.borderColor
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    color: colors.textColor,
+                                    padding: 20
+                                }
+                            }
+                        },
+                        animation: {
+                            onComplete: function() {
+                                wasteCanvas.classList.add('loaded');
+                            }
+                        }
+                    }
+                });
+            }
+
+            // MRF Scaling Timeline Chart
+            const mrfCanvas = document.getElementById('mrfScalingChart');
+            if (mrfCanvas) {
+                const mrfCtx = mrfCanvas.getContext('2d');
+                chartInstances.mrfChart = new Chart(mrfCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                        datasets: [{
+                            label: 'MRFs Established',
+                            data: [1, 2, 4, 6, 15],
+                            backgroundColor: 'rgba(13, 110, 253, 0.8)',
+                            borderColor: 'rgba(13, 110, 253, 1)',
+                            borderWidth: 2
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: colors.textColor
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    color: colors.textColor
+                                },
+                                grid: {
+                                    color: colors.gridColor
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    color: colors.textColor
+                                },
+                                grid: {
+                                    color: colors.gridColor
+                                }
+                            }
+                        },
+                        animation: {
+                            onComplete: function() {
+                                mrfCanvas.classList.add('loaded');
+                            }
+                        }
+                    }
+                });
+            }
+
+            // Job Creation Chart
+            const jobCanvas = document.getElementById('jobCreationChart');
+            if (jobCanvas) {
+                const jobCtx = jobCanvas.getContext('2d');
+                chartInstances.jobChart = new Chart(jobCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                        datasets: [{
+                            label: 'Cumulative Jobs Created',
+                            data: [50, 100, 200, 350, 500],
+                            backgroundColor: 'rgba(40, 167, 69, 0.2)',
+                            borderColor: 'rgba(40, 167, 69, 1)',
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: {
+                                labels: {
+                                    color: colors.textColor
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: {
+                                    color: colors.textColor
+                                },
+                                grid: {
+                                    color: colors.gridColor
+                                }
+                            },
+                            x: {
+                                ticks: {
+                                    color: colors.textColor
+                                },
+                                grid: {
+                                    color: colors.gridColor
+                                }
+                            }
+                        },
+                        animation: {
+                            onComplete: function() {
+                                jobCanvas.classList.add('loaded');
+                            }
+                        }
+                    }
+                });
+            }
+        }
+        
+        // Theme change observer
+        function setupThemeObserver() {
+            const observer = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'data-bs-theme') {
+                        // Destroy and recreate charts with new theme
+                        destroyCharts();
+                        setTimeout(initializeCharts, 100); // Small delay to ensure DOM is ready
+                    }
+                });
+            });
+            
+            observer.observe(document.documentElement, {
+                attributes: true,
+                attributeFilter: ['data-bs-theme']
+            });
+        }        document.addEventListener('DOMContentLoaded', function() {
+            // Prevent multiple initializations
+            if (window.mrfStrategyInitialized) {
+                return;
+            }
+            window.mrfStrategyInitialized = true;
+            
+            // Initialize AOS with error handling
+            try {
+                if (typeof AOS !== 'undefined') {
+                    AOS.init({
+                        duration: 800,
+                        once: true,
+                        offset: 100,
+                        disable: 'phone' // Disable on mobile to prevent conflicts
+                    });
+                } else {
+                    console.warn('AOS library not loaded');
+                }
+            } catch (error) {
+                console.error('Error initializing AOS:', error);
+            }
+            
+            // Load Header with enhanced error handling
+            fetch('components/header.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    const headerPlaceholder = document.getElementById('header-placeholder');
+                    if (headerPlaceholder) {
+                        headerPlaceholder.innerHTML = html;
+                        
+                        // Execute scripts in the loaded header
+                        const scripts = headerPlaceholder.querySelectorAll('script');
+                        scripts.forEach(script => {
+                            try {
+                                const newScript = document.createElement('script');
+                                if (script.src) {
+                                    newScript.src = script.src;
+                                } else {
+                                    newScript.textContent = script.textContent;
+                                }
+                                document.head.appendChild(newScript);
+                                script.remove();
+                            } catch (error) {
+                                console.error('Error executing header script:', error);
+                            }
+                        });
+                        
+                        // Setup theme observer after header is loaded
+                        setupThemeObserver();
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading header:', error);
+                    // Fallback: still setup theme observer
+                    setupThemeObserver();
+                });
+                
+            // Load Footer with enhanced error handling
+            fetch('components/footer.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    const footerPlaceholder = document.getElementById('footer-placeholder');
+                    if (footerPlaceholder) {
+                        footerPlaceholder.innerHTML = html;
+                        
+                        // Execute scripts in the loaded footer
+                        const scripts = footerPlaceholder.querySelectorAll('script');
+                        scripts.forEach(script => {
+                            try {
+                                const newScript = document.createElement('script');
+                                if (script.src) {
+                                    newScript.src = script.src;
+                                } else {
+                                    newScript.textContent = script.textContent;
+                                }
+                                document.head.appendChild(newScript);
+                                script.remove();
+                            } catch (error) {
+                                console.error('Error executing footer script:', error);
+                            }
+                        });
+                    }
+                })
+                .catch(error => console.error('Error loading footer:', error));
+
+            // Initialize charts after DOM is fully loaded
+            setTimeout(() => {
+                try {
+                    if (typeof Chart !== 'undefined') {
+                        initializeCharts();
+                    } else {
+                        console.warn('Chart.js library not loaded');
+                    }
+                } catch (error) {
+                    console.error('Error initializing charts:', error);
+                }
+            }, 500); // Delay to ensure all components are loaded
+        });
+          // Cleanup on page unload to prevent memory leaks
+        window.addEventListener('beforeunload', function() {
+            destroyCharts();
+        });
+        
+        // Handle window resize for chart responsiveness
+        let resizeTimeout;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                Object.values(chartInstances).forEach(chart => {
+                    if (chart && typeof chart.resize === 'function') {
+                        chart.resize();
+                    }
+                });
+            }, 250);
+        });
+        
+        // Handle visibility change to pause/resume animations
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                // Page is hidden, pause any ongoing animations
+                Object.values(chartInstances).forEach(chart => {
+                    if (chart && chart.options && chart.options.animation) {
+                        chart.options.animation.duration = 0;
+                    }
+                });
+            } else {
+                // Page is visible, restore animations
+                Object.values(chartInstances).forEach(chart => {
+                    if (chart && chart.options && chart.options.animation) {
+                        chart.options.animation.duration = 800;
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

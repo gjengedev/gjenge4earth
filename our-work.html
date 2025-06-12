@@ -1,4 +1,3 @@
-<!-- work.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,96 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Explore Gjenge Earth Foundation's recycling facilities and processes">
     <title>Our Work - Gjenge Earth Foundation</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/animations.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    <script src="scripts/workInteractions.js" type="module" defer></script>
-    <script type="module">
-        import { loadComponents } from './scripts/components/navigation.js';
-        document.addEventListener('DOMContentLoaded', () => {
-            loadComponents();
-        });
+    <!-- Our Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script>
+        // Bootstrap native theme initialization - runs immediately to prevent flash        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        })();
     </script>
 </head>
-<body>
-    <!-- Navigation -->
+<body>    <!-- Navigation -->
     <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
-    <section class="industrial-hero">
-        <div class="conveyor-belt">
-            <div class="recycling-items">
-                <div class="item bottle" data-speed="0.9">
-                    <img src="./images/svg/bottles.svg" alt="">
-                </div>
-                <div class="item can" data-speed="1x">
-                    <img src="./images/svg/plastic-heap.svg" alt="">
-                </div>
-                <div class="item plastic" data-speed="0.75">
-                    <img src="./images/svg/Trashcans.svg" alt="">
-                </div>
-            </div>
+    <section class="py-5 text-center bg-primary text-white">
+        <div class="container">
+            <h1 class="display-4" data-aos="fade-up">Building Circular Systems</h1>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100">Transforming plastic waste into valuable resources through innovative recycling processes.</p>
         </div>
-        <h1 class="mechanical-text" data-text="Building Circular Systems">Building Circular Systems</h1>
     </section>
 
-    <!-- Process Section with Interactive Machines -->
-    <section class="process-section">
+    <!-- Process Section -->
+    <section class="py-5">
         <div class="container">
-            <h2 class="section-title">Our Recycling Process</h2>
-            <div class="process-diagram">
-                <div class="factory-model">
-                    <!-- Interactive Machine Elements -->
-                    <div class="machine" data-step="1">
-                        <div class="machine-icon">
-                            <img src="images/MRF/GJenge-229_2__1.png" alt="Collection & Sorting" loading="lazy" length="100px" width="100px">
+            <h2 class="text-center mb-5" data-aos="fade-up">Our Recycling Process</h2>
+            <div class="row g-4">
+                <!-- Step 1: Collection & Sorting -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="images/MRF/GJenge-229_2__1.png" alt="Collection & Sorting" class="img-fluid img-100h">
+                            </div>
+                            <h5 class="card-title">Collection & Sorting</h5>
+                            <p class="card-text">We collect and sort various types of plastic waste from our community partners.</p>
+                            <span class="badge bg-primary">Step 1</span>
                         </div>
-                        <div class="machine-tooltip">Collection & Sorting</div>
                     </div>
-                    <div class="machine" data-step="2">
-                        <div class="machine-icon">
-                            <img src="images/MRF/Crushers.png" alt="Collection & Sorting" loading="lazy" length="100px" width="100px">
+                </div>
+                <!-- Step 2: Crushing -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="images/MRF/Crushers.png" alt="Crushing" class="img-fluid img-100h">
+                            </div>
+                            <h5 class="card-title">Shredding Process</h5>
+                            <p class="card-text">The sorted plastic is shredded into small, uniform pieces for processing.</p>
+                            <span class="badge bg-primary">Step 2</span>
                         </div>
-                        <div class="machine-tooltip">Crushing</div>
                     </div>
-                    <div class="machine" data-step="3">
-                        <div class="machine-icon">
-                            <img src="images/MRF/plastic-waste-washing-machine.png" alt="Collection & Sorting" loading="lazy" length="100px" width="100px">
+                </div>
+                <!-- Step 3: Processing -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="images/MRF/plastic-waste-washing-machine.png" alt="Processing" class="img-fluid img-100h">
+                            </div>
+                            <h5 class="card-title">Material Processing</h5>
+                            <p class="card-text">Crushed plastic undergoes cleaning and processing to ensure quality.</p>
+                            <span class="badge bg-primary">Step 3</span>
                         </div>
-                        <div class="machine-tooltip">Processing</div>
                     </div>
-                    <div class="machine" data-step="4">
-                        <div class="machine-icon">
-                            <img src="images/MRF/crushed-plastic.png" alt="Collection & Sorting" loading="lazy" length="100px" width="100px">
+                </div>
+                <!-- Step 4: Final Product -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="images/MRF/crushed-plastic.png" alt="Final Product" class="img-fluid img-100h">
+                            </div>
+                            <h5 class="card-title">Final Products</h5>
+                            <p class="card-text">Processed materials are ready for production use.</p>
+                            <span class="badge bg-success">Step 4</span>
                         </div>
-                        <div class="machine-tooltip">Final Product</div>
+                    </div>
+                </div>
+            </div>        </div>
+    </section>
+    
+    <!-- Community Empowerment Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Empowering Communities Through Recycling</h2>
+            <div class="row g-4">
+                <!-- Material Recovery & Community Empowerment -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="images/MRF/GJenge-229_2__1.png" class="card-img-top img-cover-200" alt="Community empowerment">
+                        <div class="card-body">
+                            <h5 class="card-title">Material Recovery & Community Empowerment</h5>
+                            <p class="card-text">We transform informal waste pickers into community recycling leaders, providing training, equipment, and sustainable income opportunities while improving working conditions and dignity.</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Content that shows when machines are clicked -->
-                <div class="process-info">
-                    <div class="step-content" data-step="1">
-                        <h3>Collection & Sorting</h3>
-                        <p>We collect and sort various types of plastic waste from our community partners.</p>
+                <!-- Gender Equality in Recycling -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="images/MRF/bottletops.jpg" class="card-img-top img-cover-200" alt="Women in recycling">
+                        <div class="card-body">
+                            <h5 class="card-title">Gender Equality in Recycling</h5>
+                            <p class="card-text">Our programs specifically focus on empowering women entrepreneurs in the recycling sector, creating leadership opportunities and sustainable income streams that transform entire families and communities.</p>
+                        </div>
                     </div>
-                    <div class="step-content" data-step="2">
-                        <h3>Shredding Process</h3>
-                        <p>The sorted plastic is shredded into small, uniform pieces for processing.</p>
-                    </div>
-                    <div class="step-content" data-step="3">
-                        <h3>Material Processing</h3>
-                        <p>Crushed plastic undergoes cleaning and processing to ensure quality.</p>
-                    </div>
-                    <div class="step-content" data-step="4">
-                        <h3>Final Products</h3>
-                        <p>Processed materials are ready for production use </p>
+                </div>
+                
+                <!-- Youth Change-Makers -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="images/MRF/crushed-plastic.png" class="card-img-top img-cover-200" alt="Youth innovation">
+                        <div class="card-body">
+                            <h5 class="card-title">Youth Change-Makers</h5>
+                            <p class="card-text">We support youth innovations that turn waste into valuable products, fostering the next generation of environmental leaders and entrepreneurs who understand both technology and community needs.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -103,62 +140,146 @@
     </section>
 
     <!-- Materials Section -->
-    <section class="materials-section">
+    <section class="py-5 bg-light">
         <div class="container">
-            <h2>Our Materials Processing </h2>
-            <div class="material-showcase">
-                <div class="material-grid">
-                    <div class="material-card" data-material="PET">
-                        <div class="material-icon">🔄</div>
-                        <h3>Baling</h3>
-                        <p>Polyethylene terephthalate from bottles and containers</p>
+            <h2 class="text-center mb-5" data-aos="fade-up">Our Materials Processing</h2>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-arrow-repeat fs-1 text-primary mb-3"></i>
+                            <h5 class="card-title">Baling</h5>
+                            <p class="card-text">Polyethylene terephthalate from bottles and containers processed through our baling systems.</p>
+                        </div>
                     </div>
-                    <div class="material-card" data-material="HDPE">
-                        <div class="material-icon">♻️</div>
-                        <h3>Crushing</h3>
-                        <p>High-density polyethylene from household products</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-recycle fs-1 text-success mb-3"></i>
+                            <h5 class="card-title">Crushing</h5>
+                            <p class="card-text">High-density polyethylene from household products processed through our crushing machinery.</p>
+                        </div>
                     </div>
-                    <div class="material-card" data-material="HDPE">
-                        <div class="material-icon">♻️</div>
-                        <h3>Agglomeration</h3>
-                        <p>High-density polyethylene from household products</p>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <i class="bi bi-gear fs-1 text-info mb-3"></i>
+                            <h5 class="card-title">Agglomeration</h5>
+                            <p class="card-text">Advanced processing techniques to create high-quality recycled materials for manufacturing.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Partner Section -->
-    <section class="partner-section">
+    <!-- Partners Section -->
+    <section class="py-5">
         <div class="container">
-            <h2>Our Partners</h2>
-            <div class="partner-grid">
-                <article class="partner-card" data-aos="fade-up">
-                    <img src="images/partners/partner1.jpg" alt="Partner organization" loading="lazy">
-                    <div class="partner-content">
-                        <h3>Nairobi CBO Collective</h3>
-                        <p>Equipped with 10 recycling machines</p>
+            <h2 class="text-center mb-5" data-aos="fade-up">Our Partners</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <img src="images/partners/UNEP - Transparent_1 (1).png" class="card-img-top p-3 img-contain-200" alt="UNEP">
+                        <div class="card-body">
+                            <h5 class="card-title">UNEP Partnership</h5>
+                            <p class="card-text">Collaborating with the United Nations Environment Programme on sustainable waste management initiatives.</p>
+                        </div>
                     </div>
-                </article>
-                <!-- Additional partner cards -->
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <img src="images/partners/Habitat for humanity (1).png" class="card-img-top p-3 img-contain-200" alt="Habitat for Humanity">
+                        <div class="card-body">
+                            <h5 class="card-title">Habitat for Humanity</h5>
+                            <p class="card-text">Working together to build sustainable housing solutions using recycled materials.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100">
+                        <img src="images/partners/ministry_of_Transport (1).png" class="card-img-top p-3 img-contain-200" alt="Ministry of Transport">
+                        <div class="card-body">
+                            <h5 class="card-title">Government Collaboration</h5>
+                            <p class="card-text">Partnering with government agencies to implement large-scale recycling infrastructure projects.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h2 data-aos="fade-up">Join Our Mission</h2>
+            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Partner with us to create a sustainable future through innovative recycling solutions.</p>
+            <div data-aos="fade-up" data-aos-delay="200">
+                <a href="contact.html" class="btn btn-light btn-lg me-2">Contact Us</a>
+                <a href="get-involved.html" class="btn btn-outline-light btn-lg">Get Involved</a>
+            </div>
+        </div>
+    </section>    <!-- Footer -->
     <div id="footer-placeholder"></div>
 
-    <!-- Script -->
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });        document.addEventListener('DOMContentLoaded', function() {
+            // Load Header and Footer
+            fetch('components/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    const headerPlaceholder = document.getElementById('header-placeholder');
+                    headerPlaceholder.innerHTML = html;
+                    
+                    // Execute scripts in the loaded header
+                    const scripts = headerPlaceholder.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        script.remove();
+                    });
+                })
+                .catch(error => console.error('Error loading header:', error));
+                
             fetch('components/footer.html')
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById('footer-placeholder').innerHTML = html;
-                });
+                    const footerPlaceholder = document.getElementById('footer-placeholder');
+                    footerPlaceholder.innerHTML = html;
+                    
+                    // Execute scripts in the loaded footer
+                    const scripts = footerPlaceholder.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        script.remove();
+                    });
+                })
+                .catch(error => console.error('Error loading footer:', error));
         });
-        </script>
+    </script>
     
 </body>
 </html>

@@ -1,4 +1,3 @@
-<!-- Documents/Earth foundation/impact.html  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,28 +9,31 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Styles -->
-    <!-- <link rel="stylesheet" href="styles/main.css"> -->
-    <!-- <link rel="stylesheet" href="styles/animations.css"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.css" rel="stylesheet"> -->
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- AOS CSS (for animations) -->
+    
+    <!-- Our Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    
+    <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Scripts -->
-    <!-- <script src="scripts/impact.js" defer></script> -->
-    <!--
-    <script type=\'module\'>
-        import { loadComponents } from \'./scripts/components/navigation.js\';
-        document.addEventListener(\'DOMContentLoaded\', () => {
-            loadComponents();
-        });
+    <script>
+        // Bootstrap native theme initialization - runs immediately to prevent flash
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        })();
     </script>
-    -->
-    <style>
+    </script>
+      <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
         .sdg-icon-img {
             width: 80px; /* Adjust as needed */
             height: 80px; /* Adjust as needed */
@@ -63,41 +65,197 @@
     <!-- Key Metrics -->
     <section class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Key Achievements</h2>
-            <div class="row text-center g-4">
-                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="text-center mb-5" data-aos="fade-up">Key Achievements</h2>            <div class="row text-center g-4">                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
                             <i class="bi bi-recycle fs-1 text-primary mb-3"></i>
-                            <h3 class="display-5 fw-bold">5M+</h3>
-                            <p class="text-muted">Kgs of Plastic Recycled</p>
+                            <h3 class="display-5 fw-bold">200K+</h3>
+                            <p class="text-muted">Tons Projected Annual Recycling by Year 5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <i class="bi bi-water fs-1 text-primary mb-3"></i>
+                            <h3 class="display-5 fw-bold">500+</h3>
+                            <p class="text-muted">Tons Diverted from Oceans</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
-                            <i class="bi bi-people-fill fs-1 text-success mb-3"></i>
-                            <h3 class="display-5 fw-bold">300+</h3>
-                            <p class="text-muted">Jobs Created</p>
+                            <i class="bi bi-gender-female fs-1 text-success mb-3"></i>
+                            <h3 class="display-5 fw-bold">3,500+</h3>
+                            <p class="text-muted">Women Empowered</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
-                            <i class="bi bi-house-heart-fill fs-1 text-info mb-3"></i>
-                            <h3 class="display-5 fw-bold">1000+</h3>
-                            <p class="text-muted">Homes Improved</p>
+                            <i class="bi bi-building fs-1 text-info mb-3"></i>
+                            <h3 class="display-5 fw-bold">15+</h3>
+                            <p class="text-muted">MRFs Planned by Year 5</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3" data-aos="fade-up" data-aos-delay="500">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body">
-                            <i class="bi bi-award-fill fs-1 text-warning mb-3"></i>
-                            <h3 class="display-5 fw-bold">10+</h3>
-                            <p class="text-muted">Awards Received</p>
+                            <i class="bi bi-heart-fill fs-1 text-danger mb-3"></i>
+                            <h3 class="display-5 fw-bold">5,000+</h3>
+                            <p class="text-muted">Lives Positively Impacted</p>
+                        </div>
+                    </div>
+                </div>
+            </div>        </div>
+    </section>
+    
+    <!-- Detailed Impact Areas -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Our Impact in Detail</h2>
+            <div class="row g-4">
+                <!-- Community Impact -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 border-primary">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="card-title mb-0"><i class="bi bi-people-fill me-2"></i>Community Impact</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>85% income increase</strong> among recyclers</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Improved health and safety conditions</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Enhanced dignity and working conditions</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Community leadership development</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Environmental Impact -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 border-success">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="card-title mb-0"><i class="bi bi-globe2 me-2"></i>Environmental Impact</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>500+ tons</strong> diverted from oceans</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Reduced landfill waste significantly</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Cleaner community environments</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Carbon footprint reduction</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Gender Empowerment -->
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 border-warning">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="card-title mb-0"><i class="bi bi-gender-female me-2"></i>Gender Empowerment</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>3,500+ women</strong> in sustainable employment</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Women leadership in recycling</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Enhanced economic independence</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Improved family wellbeing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    </section>
+
+    <!-- MRF Strategy Projections -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">MRF Strategy 5-Year Projections</h2>
+            <div class="row g-4 mb-5">
+                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="bi bi-graph-up-arrow me-2"></i>Facility Growth & Impact Timeline</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="mrfProjectionChart" style="height: 300px;"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row g-3 h-100">
+                        <div class="col-12">
+                            <div class="card text-center border-success">
+                                <div class="card-body">
+                                    <i class="bi bi-building-add fs-1 text-success mb-2"></i>
+                                    <h4 class="text-success">15+ MRFs</h4>
+                                    <p class="small text-muted mb-0">Total facilities by Year 5</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card text-center border-info">
+                                <div class="card-body">
+                                    <i class="bi bi-people-fill fs-1 text-info mb-2"></i>
+                                    <h4 class="text-info">500+ Jobs</h4>
+                                    <p class="small text-muted mb-0">Direct employment created</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card text-center border-warning">
+                                <div class="card-body">
+                                    <i class="bi bi-cloud-minus-fill fs-1 text-warning mb-2"></i>
+                                    <h4 class="text-warning">168K Tons</h4>
+                                    <p class="small text-muted mb-0">CO₂ emissions avoided annually</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Market Analysis Insights -->
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-danger text-white">
+                            <h6 class="mb-0"><i class="bi bi-exclamation-triangle-fill me-2"></i>The Challenge</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h3 class="text-danger mb-1">400K+</h3>
+                                    <small class="text-muted">Tons plastic waste generated annually in Kenya</small>
+                                </div>
+                                <div class="col-6">
+                                    <h3 class="text-warning mb-1">93%</h3>
+                                    <small class="text-muted">Current mismanaged waste rate</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-success text-white">
+                            <h6 class="mb-0"><i class="bi bi-target me-2"></i>Our Solution Impact</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h3 class="text-success mb-1">30%</h3>
+                                    <small class="text-muted">Reduction in mismanaged waste in target areas</small>
+                                </div>
+                                <div class="col-6">
+                                    <h3 class="text-info mb-1">75%</h3>
+                                    <small class="text-muted">Women & youth employment target</small>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -244,20 +402,49 @@
             duration: 800,
             once: true,
             offset: 100
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
+        });        document.addEventListener('DOMContentLoaded', function() {
             // Load Header and Footer
             fetch('components/header.html')
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById('header-placeholder').innerHTML = html;
-                });
+                    const headerPlaceholder = document.getElementById('header-placeholder');
+                    headerPlaceholder.innerHTML = html;
+                    
+                    // Execute scripts in the loaded header
+                    const scripts = headerPlaceholder.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        script.remove();
+                    });
+                })
+                .catch(error => console.error('Error loading header:', error));
+                
             fetch('components/footer.html')
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById('footer-placeholder').innerHTML = html;
-                });
+                    const footerPlaceholder = document.getElementById('footer-placeholder');
+                    footerPlaceholder.innerHTML = html;
+                    
+                    // Execute scripts in the loaded footer
+                    const scripts = footerPlaceholder.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        script.remove();
+                    });
+                })
+                .catch(error => console.error('Error loading footer:', error));
 
             // SDG Data (example)
             const sdgData = {
@@ -355,8 +542,87 @@
                             beginAtZero: true
                         }
                     }
-                }
-            });
+                }            });
+
+            // MRF Strategy Projection Chart
+            const mrfProjectionCtx = document.getElementById('mrfProjectionChart');
+            if (mrfProjectionCtx) {
+                new Chart(mrfProjectionCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
+                        datasets: [
+                            {
+                                label: 'MRFs Established (Cumulative)',
+                                data: [1, 2, 4, 6, 15],
+                                backgroundColor: 'rgba(13, 110, 253, 0.2)',
+                                borderColor: 'rgba(13, 110, 253, 1)',
+                                borderWidth: 3,
+                                fill: false,
+                                tension: 0.4,
+                                yAxisID: 'y'
+                            },
+                            {
+                                label: 'Jobs Created (Cumulative)',
+                                data: [50, 100, 200, 350, 500],
+                                backgroundColor: 'rgba(40, 167, 69, 0.2)',
+                                borderColor: 'rgba(40, 167, 69, 1)',
+                                borderWidth: 3,
+                                fill: false,
+                                tension: 0.4,
+                                yAxisID: 'y1'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        interaction: {
+                            mode: 'index',
+                            intersect: false,
+                        },
+                        plugins: {
+                            legend: {
+                                position: 'top',
+                            }
+                        },
+                        scales: {
+                            x: {
+                                display: true,
+                                title: {
+                                    display: true,
+                                    text: 'Implementation Timeline'
+                                }
+                            },
+                            y: {
+                                type: 'linear',
+                                display: true,
+                                position: 'left',
+                                title: {
+                                    display: true,
+                                    text: 'Number of MRFs'
+                                },
+                                beginAtZero: true,
+                                max: 20
+                            },
+                            y1: {
+                                type: 'linear',
+                                display: true,
+                                position: 'right',
+                                title: {
+                                    display: true,
+                                    text: 'Jobs Created'
+                                },
+                                beginAtZero: true,
+                                max: 600,
+                                grid: {
+                                    drawOnChartArea: false,
+                                }
+                            }
+                        }
+                    }
+                });
+            }
         });
     </script>
 

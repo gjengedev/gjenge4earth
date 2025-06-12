@@ -1,4 +1,3 @@
-<!-- /Documents/Earth foundation/about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,57 +8,88 @@
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     
-    <!-- Styles -->
-    <!-- <link rel="stylesheet" href="styles/main.css"> -->
-    <!-- <link rel="stylesheet" href="styles/animations.css"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Our Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="scripts/main.js" type="module" defer></script>
-    <!-- <script src="scripts/aboutAnimations.js" defer></script> -->
-    <script type="module">
-        import  { loadComponents } from './scripts/components/navigation.js';
-        document.addEventListener('DOMContentLoaded', () => {
-            loadComponents();
-            AOS.init(); // Initialize AOS
-        });
+    
+    <script>
+        // Bootstrap native theme initialization - runs immediately to prevent flash
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        })();
+    </script>
     </script>
 </head>
-<body>
-    <!-- Navigation -->
+<body>    <!-- Navigation -->
     <div id="header-placeholder"></div>
 
-    <!-- Hero Section -->
-    <header class="py-5 text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/MRF/bottletops.jpg') center/cover no-repeat; min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+    <!-- Hero Section with Integrated Menu -->
+    <header class="position-relative py-5 text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/MRF/bottletops.jpg') center/cover no-repeat; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
         <div class="container">
             <h1 class="display-4 fw-bold animate-slide-up">Our Journey in <span class="text-primary">Sustainable Change</span></h1>
             <p class="lead">Building a cleaner future through community-driven initiatives</p>
         </div>
+        
+        <!-- About Page Menu - Left Bottom Third -->
+        <div class="about-menu-block position-absolute" id="aboutMenuBlock">
+            <div class="menu-items">
+                <a href="#mission-vision" class="menu-item">Mission & Vision</a>
+                <a href="#timeline" class="menu-item">Our Journey</a>
+                <a href="#team" class="menu-item">Our Team</a>
+                <a href="#values" class="menu-item">Our Values</a>
+            </div>
+        </div>
     </header>
 
+    <!-- Mobile Navigation Button (appears on scroll) -->
+    <button class="btn btn-primary mobile-nav-btn" id="mobileNavBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#aboutOffcanvas" aria-controls="aboutOffcanvas">
+        <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Mobile Offcanvas Menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="aboutOffcanvas" aria-labelledby="aboutOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="aboutOffcanvasLabel">About Navigation</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-grid gap-2">
+                <a href="#mission-vision" class="btn btn-outline-primary mobile-menu-item">Mission & Vision</a>
+                <a href="#timeline" class="btn btn-outline-primary mobile-menu-item">Our Journey</a>
+                <a href="#team" class="btn btn-outline-primary mobile-menu-item">Our Team</a>
+                <a href="#values" class="btn btn-outline-primary mobile-menu-item">Our Values</a>
+            </div>        </div>
+    </div>
+    
     <!-- Mission & Vision -->
-    <section class="py-5" data-aos="fade-up">
+    <section id="mission-vision" class="py-5" data-aos="fade-up">
         <div class="container">
             <div class="row g-4">
-                <div class="col-md-4 d-flex align-items-stretch">
-                    <div class="card h-100 p-4 text-center">
+                <div class="col-md-4 d-flex align-items-stretch">                    <div class="card h-100 p-4 text-center">
                         <div class="card-body">
                             <h2 class="card-title h3">Our Mission</h2>
-                            <p class="card-text">To revolutionize waste management through innovative recycling solutions while empowering local communities and preserving our environment for future generations.</p>
+                            <p class="card-text">To empower communities economically through sustainable recycling initiatives, with a special focus on women and youth, while creating innovative solutions for waste management and environmental preservation.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex align-items-stretch">
-                    <div class="card h-100 p-4 text-center">
+                <div class="col-md-4 d-flex align-items-stretch">                    <div class="card h-100 p-4 text-center">
                         <div class="card-body">
                             <h2 class="card-title h3">Our Vision</h2>
-                            <p class="card-text">A world where waste becomes a resource, communities thrive through sustainable practices, and environmental consciousness drives every action.</p>
+                            <p class="card-text">A sustainable, equitable future where communities drive local innovation, women lead economic transformation, and every street is free from plastic waste through community-driven recycling initiatives.</p>
                         </div>
                     </div>
                 </div>
@@ -75,8 +105,7 @@
         </div>
     </section>
 
-    <!-- Timeline -->
-    <section class="py-5 bg-light">
+    <!-- Timeline -->    <section id="timeline" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5">Our Story</h2>
             <div class="row">
@@ -127,10 +156,8 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Team Section -->
-    <section class="py-5" data-aos="fade-up">
+    </section>    <!-- Team Section -->
+    <section id="team" class="py-5" data-aos="fade-up">
         <div class="container">
             <h2 class="text-center mb-5">Our Team</h2>
             <div class="row justify-content-center">
@@ -142,27 +169,363 @@
                             <p class="card-text">Executive Director</p>
                         </div>
                     </div>
+                </div>                <!-- Add more team members as needed by duplicating the col-md-4 structure -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Values</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-heart-fill fs-1 text-danger"></i>
+                            </div>                            <h5 class="card-title">Gender Equality</h5>
+                            <p class="card-text">We champion equal opportunities for women and marginalized communities, ensuring their voices lead the transformation in waste management and economic empowerment.</p>
+                        </div>
+                    </div>
                 </div>
-                <!-- Add more team members as needed by duplicating the col-md-4 structure -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-leaf-fill fs-1 text-success"></i>
+                            </div>
+                            <h5 class="card-title">Environmental Stewardship</h5>
+                            <p class="card-text">We are committed to protecting our planet through innovative recycling solutions and sustainable practices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-lightbulb-fill fs-1 text-warning"></i>
+                            </div>                            <h5 class="card-title">Community Innovation</h5>
+                            <p class="card-text">We support and amplify local innovations, believing that the best solutions come from within the communities that understand their challenges best.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 text-center border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-people-fill fs-1 text-primary"></i>
+                            </div>                            <h5 class="card-title">Transparency</h5>
+                            <p class="card-text">We operate with complete openness about our impact, challenges, and progress, ensuring accountability to the communities we serve and our partners.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    </section>
+
+    <!-- Organizational Structure & Partnership -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Our Organizational Model</h2>
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0"><i class="bi bi-building-fill me-2"></i>Gjenge For Earth PRO (GPRO)</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-3"><strong>Non-profit organization</strong> focused on scaling Material Recovery Facilities and building sustainable waste management systems.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Community empowerment and job creation</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Supporting local recyclers and waste aggregators</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Environmental impact through plastic waste recovery</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Grant management and donor relations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="bi bi-gear-fill me-2"></i>Gjenge Makers Ltd Partnership</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-3"><strong>Strategic partnership</strong> providing technical support and ensuring long-term sustainability.</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>Machinery and technical support provision</li>
+                                <li class="mb-2"><i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>Initial funding for facility setup and operations</li>
+                                <li class="mb-2"><i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>Guaranteed plastic sourcing at subsidized rates</li>
+                                <li class="mb-2"><i class="bi bi-arrow-right-circle-fill text-primary me-2"></i>Research & development for machinery efficiency</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Partnership Benefits -->
+            <div class="row mt-4">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-warning">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0"><i class="bi bi-lightbulb-fill me-2"></i>How Our Partnership Model Works</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row g-4">
+                                <div class="col-md-4 text-center">
+                                    <i class="bi bi-1-circle-fill fs-1 text-primary mb-3"></i>
+                                    <h6>Initial Setup</h6>
+                                    <p class="small text-muted">Gjenge Makers provides machinery and operational funding to establish MRFs</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <i class="bi bi-2-circle-fill fs-1 text-success mb-3"></i>
+                                    <h6>Material Exchange</h6>
+                                    <p class="small text-muted">GPRO provides recycled plastic to Gjenge Makers at subsidized rates for production</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <i class="bi bi-3-circle-fill fs-1 text-info mb-3"></i>
+                                    <h6>Debt Settlement</h6>
+                                    <p class="small text-muted">Setup costs are compensated through plastic equivalent value over time</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Bootstrap JS Bundle with Popper -->
+    <div id="footer-placeholder"></div>    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Footer -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    <script>        document.addEventListener('DOMContentLoaded', function() {
+            // Load Header and Footer
+            fetch('components/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    const headerPlaceholder = document.getElementById('header-placeholder');
+                    headerPlaceholder.innerHTML = html;
+                    
+                    // Execute scripts in the loaded header
+                    const scripts = headerPlaceholder.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        script.remove();
+                    });
+                })
+                .catch(error => console.error('Error loading header:', error));
+                
             fetch('components/footer.html')
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById('footer-placeholder').innerHTML = html;
+                    const footerPlaceholder = document.getElementById('footer-placeholder');
+                    footerPlaceholder.innerHTML = html;
+                    
+                    // Execute scripts in the loaded footer
+                    const scripts = footerPlaceholder.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        script.remove();
+                    });
+                })
+                .catch(error => console.error('Error loading footer:', error));// Smooth scrolling for navigation links
+            document.querySelectorAll('.menu-item, .mobile-menu-item').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        const offsetTop = target.offsetTop - 100; // Account for fixed headers
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                        // Close offcanvas if it's open
+                        const offcanvas = bootstrap.Offcanvas.getInstance(document.getElementById('aboutOffcanvas'));
+                        if (offcanvas) {
+                            offcanvas.hide();
+                        }
+                    }
                 });
+            });
+
+            // Highlight active section in navigation
+            const sections = document.querySelectorAll('section[id]');
+            const menuItems = document.querySelectorAll('.menu-item');
+
+            function highlightActiveSection() {
+                const scrollPosition = window.scrollY + 200;
+
+                sections.forEach(section => {
+                    const top = section.offsetTop;
+                    const bottom = top + section.offsetHeight;
+
+                    if (scrollPosition >= top && scrollPosition <= bottom) {
+                        const activeLink = document.querySelector(`.menu-item[href="#${section.id}"]`);
+                        menuItems.forEach(link => link.classList.remove('active'));
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }            // Handle scroll behavior for mobile nav button
+            const mobileNavBtn = document.getElementById('mobileNavBtn');
+            const aboutMenuBlock = document.getElementById('aboutMenuBlock');
+            
+            function handleScroll() {
+                const scrollPosition = window.scrollY;
+                const heroHeight = document.querySelector('header').offsetHeight;
+                
+                if (scrollPosition > heroHeight * 0.8) {
+                    // Show mobile nav button, hide desktop menu
+                    mobileNavBtn.style.display = 'block';
+                    mobileNavBtn.style.bottom = '2rem';
+                    mobileNavBtn.style.right = '2rem';
+                    aboutMenuBlock.style.opacity = '0';
+                    aboutMenuBlock.style.pointerEvents = 'none';
+                } else {
+                    // Show desktop menu, hide mobile nav button
+                    mobileNavBtn.style.display = 'none';
+                    aboutMenuBlock.style.opacity = '1';
+                    aboutMenuBlock.style.pointerEvents = 'auto';
+                }
+                
+                highlightActiveSection();
+            }
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Run on page load
         });
-        </script>
+    </script>    
+      <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }/* About Menu Block Styles */
+        .about-menu-block {
+            z-index: 10;
+            transition: all 0.3s ease-in-out;
+            bottom: 2rem;
+            right:2rem;
+        }
+        
+        .menu-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .menu-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 0.375rem 0.75rem;
+            color: #0d6efd !important;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: block;
+            text-align: center;
+            min-width: 180px;
+        }
+        
+        .menu-item:hover {
+            background: rgba(13, 110, 253, 0.9);
+            color: white !important;
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+        }
+        
+        .menu-item.active {
+            background: rgba(13, 110, 253, 0.8);
+            color: white !important;
+            border-color: #0d6efd;
+        }
+          /* Mobile Navigation Button */
+        .mobile-nav-btn {
+            visibility: hidden;
+            position: fixed;
+            bottom: 30%;
+            right: 2rem;
+            z-index: 1050;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .mobile-nav-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Mobile Menu Items */
+        .mobile-menu-item {
+            text-decoration: none;
+        }
+          /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .about-menu-block {
+                bottom: 2rem;
+                right: 1rem;
+            }
+            
+            .menu-item {
+                min-width: 150px;
+                padding: 0.25rem 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .about-menu-block {
+                bottom: 2rem;
+                right: 1rem;
+            }
+            
+            .menu-item {
+                min-width: 120px;
+                padding: 0.2rem 0.4rem;
+                font-size: 0.8rem;
+            }
+        }
+        
+        /* Timeline styles */
+        .timeline-item {
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: #0d6efd;
+            transform: translateX(-50%);
+        }
+        .timeline-item:last-child::before {
+            display: none;
+        }
+    </style>
     
 </body>
 </html>

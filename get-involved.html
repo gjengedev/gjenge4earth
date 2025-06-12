@@ -1,30 +1,32 @@
-<!-- get-involved.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join Gjenge Earth Foundation in creating sustainable change through community empowerment and environmental action">
     <title>Get Involved - Gjenge Earth Foundation</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Links -->
-    <!-- <link rel="stylesheet" href="styles/main.css"> -->
-    <!-- <link rel="stylesheet" href="styles/animations.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Our Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- Scripts -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
-    <!--
-    <script type=\"module\">
-        import { loadComponents } from \'./scripts/components/navigation.js\';
-        document.addEventListener(\'DOMContentLoaded\', () => {
-            loadComponents();
-        });
-    </script>
-    -->
+    <script>
+        // Bootstrap native theme initialization - runs immediately to prevent flash
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        })();
+    </script>    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -71,8 +73,7 @@
     <section id="donation-path" class="py-5">
         <div class="container">
             <h2 class="text-center mb-5">Support Our Cause</h2>
-            <!-- Donation Stepper (Simplified) -->
-            <div class="progress mb-4" style="height: 20px;">
+            <!-- Donation Stepper (Simplified) -->            <div class="progress mb-4 progress-thick">
                 <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">Step 1: Amount</div>
             </div>
 
@@ -81,10 +82,9 @@
                     <div class="card text-center h-100">
                         <div class="card-header bg-primary text-white">
                             Most Impact
-                        </div>
-                        <div class="card-body">
+                        </div>                        <div class="card-body">
                             <h3 class="card-title display-5">$50</h3>
-                            <p class="card-text">Supports 1 waste collector for a week.</p>
+                            <p class="card-text">Training for one woman recycler, providing skills and empowerment.</p>
                             <button class="btn btn-primary">Choose Amount</button>
                         </div>
                     </div>
@@ -92,8 +92,8 @@
                 <div class="col-md-4">
                     <div class="card text-center h-100">
                         <div class="card-body">
-                            <h3 class="card-title display-5">$100</h3>
-                            <p class="card-text">Provides materials for a community workshop.</p>
+                            <h3 class="card-title display-5">$200</h3>
+                            <p class="card-text">Community sorting facility setup, creating local employment opportunities.</p>
                             <button class="btn btn-outline-primary">Choose Amount</button>
                         </div>
                     </div>
@@ -218,18 +218,48 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="scripts/main.js"></script> -->
     <!-- <script src="scripts/involvementInteractions.js"></script> -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    <script>        document.addEventListener('DOMContentLoaded', function() {
             fetch('components/header.html')
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById('header-placeholder').innerHTML = html;
-                });
+                    const headerPlaceholder = document.getElementById('header-placeholder');
+                    headerPlaceholder.innerHTML = html;
+                    
+                    // Execute scripts in the loaded header
+                    const scripts = headerPlaceholder.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        script.remove();
+                    });
+                })
+                .catch(error => console.error('Error loading header:', error));
+                
             fetch('components/footer.html')
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById('footer-placeholder').innerHTML = html;
-                });
+                    const footerPlaceholder = document.getElementById('footer-placeholder');
+                    footerPlaceholder.innerHTML = html;
+                    
+                    // Execute scripts in the loaded footer
+                    const scripts = footerPlaceholder.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        script.remove();
+                    });
+                })
+                .catch(error => console.error('Error loading footer:', error));
         });
 
         function updateImpact(value) {

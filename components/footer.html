@@ -1,4 +1,4 @@
-<footer class="bg-dark text-light pt-5 pb-4">
+<footer class="bg-dark text-light pt-5 pb-4 footer-component">
   <div class="container text-center text-md-start">
     <div class="row gy-4">
       <!-- Logo & Socials -->
@@ -50,8 +50,13 @@
   </div>
   <div class="text-center py-3 mt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
     <p class="mb-0">&copy; 2025 Gjenge 4 Earth. All rights reserved.</p>
-  </div>
-  <button class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-3" style="width: 44px; height: 44px; font-size: 1.5rem;" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  </div>  <button class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-3" style="width: 44px; height: 44px; font-size: 1.5rem;" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
     &uarr;
   </button>
 </footer>
+
+<style>
+  .footer-component {
+    transition: all 0.3s ease;
+  }
+</style>

@@ -5,133 +5,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gjenge Earth Foundation - Recycling initiatives empowering communities">
     <title>Gjenge Earth Foundation</title>
-    
-    <!-- Bootstrap CSS -->
+      <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Styles -->
-    <!-- <link rel="stylesheet" href="styles/main.css"> -->
-    <!-- <link rel="stylesheet" href="styles/animations.css"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/animation.css">
+    <link rel="stylesheet" href="styles/transformation-cards.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="scripts/main.js" type="module" defer></script>
+      <!-- Scripts -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script> -->
+    <!-- <script src="scripts/main.js" type="module" defer></script> -->
+    <!--
     <script type="module">
         import { loadComponents } from './scripts/components/navigation.js';
         document.addEventListener('DOMContentLoaded', () => {
-            loadComponents();
-        });
-    </script>
+            loadComponents();        });    </script>
+    -->
+      <script>
+        // Bootstrap native theme initialization - runs immediately to prevent flash
+        (function() {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.documentElement.setAttribute('data-bs-theme', savedTheme);
+        })();    </script>
 </head>
 <body>
     <!-- Navigation -->
-    <div id="header-placeholder"></div>
-
-    <!-- Hero Section -->
-    <section class="hero bg-dark text-light py-5">
+    <div id="header-placeholder"></div>    <!-- Hero Section -->
+    <section class="hero position-relative text-white hero-bottletops">
         <div class="container">
-            <div class="row justify-content-center align-items-center text-center">
-                <div class="col-md-8">
-                    <h1 class="display-4 fw-bold animate-slide-up">
-                        Transforming Waste,<br>
+            <div class="row justify-content-center text-center">                
+                <div class="col-lg-10">
+                    <h1 class="display-1 fw-bold mb-4 hero-title">
+                        Transforming Waste<br>
                         <span class="text-primary">Empowering Communities</span>
                     </h1>
-                    <p class="lead my-4">
-                        Founded with the goal of transcending the social and environmental impact of Gjenge Makers, 
-                        Gjenge 4 Earth is dedicated to improving recycling initiatives and partnering with communities 
-                        to recycle plastics and empower lives.
-                    </p>
-                    <div class="hero-actions">
-                        <a href="#join" class="btn btn-primary btn-lg me-2">Join Us</a>
-                        <a href="#partner" class="btn btn-outline-light btn-lg">Partner with Us</a>
+                    
+                    <p class="lead mb-5 hero-description">
+                        We've heard of Gjenge Makers <br><span class="text-primary"> <a href="about.html">What is Gjenge 4 Earth?</a></span>
+                    </p>                    <div class="hero-actions mb-5">
+                        <a href="get-involved.html" class="btn btn-primary btn-md px-3 py-1 me-2 mb-2">Partner With Us</a>
+                        <a href="mrf-strategy.html" class="btn btn-success btn-md px-3 py-1 me-2 mb-2">Our Strategy</a>
+                        <a href="#impact" class="btn btn-outline-light btn-md px-3 py-1 mb-2">See Our Impact</a>
                     </div>
                 </div>
             </div>
         </div>
+        
+        <!-- Scroll indicator -->
+        <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4">
+            <i class="bi bi-chevron-down text-white scroll-indicator"></i>
+        </div>
     </section>
-
-    <!-- Introduction Section -->
-    <section class="introduction py-5">
+      <!-- Community Empowerment Introduction -->
+    <section class="py-5 section-primary">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <h2>About Gjenge 4 Earth</h2>
-                    <p class="lead">
-                        Born from the vision of transforming waste into wealth and sustainability, Earth Foundation is 
-                        a recycling and manufacturing company that is committed to making a difference. We believe in 
-                        the power of community-driven initiatives and are dedicated to creating a healthier planet for future generations.
+                <div class="col-lg-10 text-center">
+                    <h2 class="display-6 fw-bold mb-4">Empowering Communities Through Recycling</h2>
+                    <p class="lead mb-4">
+                        At Gjenge 4 Earth, we believe in transforming lives alongside transforming waste. Our community-driven approach 
+                        focuses on <strong>gender equality</strong>, <strong>environmental justice</strong>, and <strong>sustainable livelihoods</strong> 
+                        for those who need it most.
+                    </p>
+                    <div class="row g-4 mt-4">
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <i class="bi bi-people-fill text-primary-custom fs-1 mb-3"></i>
+                                <h5>Community-Driven</h5>
+                                <p>Empowering local communities to lead their own recycling initiatives</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <i class="bi bi-gender-female text-success fs-1 mb-3"></i>
+                                <h5>Gender Equality</h5>
+                                <p>Creating economic opportunities specifically for women in waste management</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="text-center">
+                                <i class="bi bi-heart-fill text-danger fs-1 mb-3"></i>
+                                <h5>Environmental Justice</h5>
+                                <p>Ensuring clean environments and dignified work for all community members</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Problem Statement Section -->
+    <section class="py-5 section-light" id="impact">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2 class="display-5 fw-bold mb-4">A PLANET-SIZED PROBLEM</h2>                    <p class="lead mb-4 problem-description">
+                        Kenya generates over 24 million tons of waste annually, with plastic waste making up a significant portion. 
+                        Most of this waste ends up in landfills, waterways, and the environment, causing devastating effects on ecosystems and communities.
+                    </p>
+                    <p class="lead mb-5 problem-description">
+                        Plastic pollution is a crisis requiring urgent action. Without intervention, this waste persists for decades, 
+                        harming wildlife and human health while communities lack sustainable building materials and economic opportunities.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="features py-5 bg-light">
+    <!-- Solution Section -->
+    <section class="py-5 section-primary">
         <div class="container">
-            <h2 class="text-center mb-5">What We Do</h2>
-            <div class="row g-4">
-                <div class="col-md-4 d-flex align-items-stretch" data-aos="fade-up">
-                    <div class="card h-100">
-                        <div style="height: 220px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Site_pics/20250519_130157.jpg'); background-position: center; background-size: cover;" class="card-img-top">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-10">
+                    <h2 class="display-5 fw-bold mb-4">WE AIM TO PROCESS 100,000 TONS OF PLASTIC WASTE BY 2030</h2>                    <p class="lead mb-5 solution-description">
+                        Gjenge 4 Earth is transforming Kenya's waste crisis into opportunities. We use innovative recycling technologies 
+                        to convert plastic waste into high-quality building materials, creating sustainable solutions for housing while 
+                        empowering local communities through job creation and skills development.
+                    </p>                    <div class="row g-4 mt-4">
+                        <div class="col-md-6">
+                            <img src="images/MRF/bumper2.png" class="img-fluid rounded shadow w-100 img-cover-250" alt="Plastic waste processing">
                         </div>
-                        <div class="card-body text-center">
-                            <h3 class="card-title">Waste Collection</h3>
-                            <p class="card-text">Organized community waste collection and sorting programs</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100">
-                         <div style="height: 220px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Site_pics/training.jpg'); background-position: center; background-size: cover;" class="card-img-top">
-                        </div>
-                        <div class="card-body text-center">
-                            <h3 class="card-title">Education</h3>
-                            <p class="card-text">Environmental awareness and sustainable practices training</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100">
-                        <div style="height: 220px; background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/Site_pics/Workshop.jpg'); background-position: center; background-size: cover;" class="card-img-top">
-                        </div>
-                        <div class="card-body text-center">
-                            <h3 class="card-title">Community Impact</h3>
-                            <p class="card-text">Creating employment and sustainable income opportunities</p>
+                        <div class="col-md-6">
+                            <img src="images/MRF/Crushers.png" class="img-fluid rounded shadow w-100 img-cover-250" alt="Building materials production">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </div>    </section>
 
-    <!-- Metrics Section -->
-    <section class="metrics py-5">
+    <!-- Dual Approach Section -->
+    <section class="py-5 section-light">
         <div class="container">
-            <h2 class="text-center mb-5">Our Achievements</h2>
-            <div class="row text-center g-4">
+            <div class="row g-5 align-items-center">
+                <!-- Waste Processing -->
+                <div class="col-lg-6">
+                    <h2 class="display-6 fw-bold mb-4">PROCESSING<br>PLASTIC WASTE</h2>                    <p class="lead mb-4 approach-description">
+                        We collect and process plastic waste from communities across Kenya, transforming thousands of 
+                        tons into valuable building materials through our innovative recycling technology.
+                    </p>
+                    <a href="our-work.html" class="btn btn-primary">Read more about: Processing plastic waste</a>
+                </div>                <div class="col-lg-6">                    <img src="images/MRF/crushed-plastic.png" class="img-fluid rounded shadow w-100 img-cover-300" 
+                         alt="Plastic waste processing facility">
+                </div>
+            </div>
+            
+            <div class="row g-5 align-items-center mt-5">
+                <!-- Community Empowerment -->
+                <div class="col-lg-6 order-lg-2">
+                    <h2 class="display-6 fw-bold mb-4">EMPOWERING<br>COMMUNITIES</h2>                    <p class="lead mb-4 approach-description">
+                        Beyond waste processing, we create sustainable livelihoods by training community members, 
+                        providing employment opportunities, and building local capacity for long-term impact.
+                    </p>
+                    <a href="projects.html" class="btn btn-primary">Read more about: Community empowerment</a>
+                </div>                <div class="col-lg-6 order-lg-1">                    <img src="images/MRF/GJenge-229_2__1.png" class="img-fluid rounded shadow w-100 img-cover-300" 
+                         alt="Community members working together">
+                </div>
+            </div>
+        </div>
+    </section>    <!-- Metrics Section -->
+    <section class="metrics py-5 section-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Achievements</h2>            <div class="row text-center g-4">
                 <div class="col-md-4" data-aos="fade-up">
                     <div class="card p-4 h-100">
-                        <h3 class="display-5 fw-bold" data-count="250">250</h3>
-                        <p class="lead">Tons of Plastic Recycled</p>
+                        <h3 class="display-5 fw-bold" data-count="5000">5,000+</h3>
+                        <p class="lead">Lives Positively Impacted</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card p-4 h-100">
-                        <h3 class="display-5 fw-bold" data-count="300">300</h3>
-                        <p class="lead">Lives Improved</p>
+                        <h3 class="display-5 fw-bold" data-count="3500">3,500+</h3>
+                        <p class="lead">Women Economically Empowered</p>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card p-4 h-100">
-                        <h3 class="display-5 fw-bold" data-count="10">10</h3>
-                        <p class="lead">Partners Worldwide</p>
+                        <h3 class="display-5 fw-bold" data-count="100">100+</h3>
+                        <p class="lead">Community-Led Recycling Initiatives</p>
                     </div>
                 </div>
             </div>
@@ -139,35 +192,31 @@
     </section>
 
     <!-- Partners Carousel -->
-    <section class="partners-section py-5 bg-light">
+    <section class="partners-section py-5">
         <div class="container">
             <h2 class="text-center mb-5">Our Partners</h2>
             <div id="partnersCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-auto"><img src="images/partners/bounty logo (1).png" class="d-block" alt="Bounty Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
-                            <div class="col-auto"><img src="images/partners/cocacola-logo (1).jpg" class="d-block" alt="Coca-Cola Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
-                            <div class="col-auto"><img src="images/partners/download (1) (1).png" class="d-block" alt="Partner Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                <div class="carousel-inner"><div class="carousel-item active">
+                        <div class="row justify-content-center align-items-center g-3">                            <div class="col-auto"><img src="images/partners/bounty logo (1).png" class="d-block partner-logo" alt="Bounty Logo"></div>
+                            <div class="col-auto"><img src="images/partners/cocacola-logo (1).jpg" class="d-block partner-logo" alt="Coca-Cola Logo"></div>
+                            <div class="col-auto"><img src="images/partners/download (1) (1).png" class="d-block partner-logo" alt="Partner Logo"></div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-auto"><img src="images/partners/Habitat for humanity (1).png" class="d-block" alt="Habitat for Humanity Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
-                            <div class="col-auto"><img src="images/partners/images (1).jpeg" class="d-block" alt="Partner Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
-                            <div class="col-auto"><img src="images/partners/London-Distillers (1).png" class="d-block" alt="London Distillers Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                        <div class="row justify-content-center align-items-center g-3">                            <div class="col-auto"><img src="images/partners/Habitat for humanity (1).png" class="d-block partner-logo" alt="Habitat for Humanity Logo"></div>
+                            <div class="col-auto"><img src="images/partners/images (1).jpeg" class="d-block partner-logo" alt="Partner Logo"></div>
+                            <div class="col-auto"><img src="images/partners/London-Distillers (1).png" class="d-block partner-logo" alt="London Distillers Logo"></div>
                         </div>
                     </div>
                      <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-auto"><img src="images/partners/ministry_of_Transport (1).png" class="d-block" alt="Ministry of Transport Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
-                            <div class="col-auto"><img src="images/partners/start somewhere (1).png" class="d-block" alt="Start Somewhere Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
-                            <div class="col-auto"><img src="images/partners/UNEP - Transparent_1 (1).png" class="d-block" alt="UNEP Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                        <div class="row justify-content-center align-items-center g-3">                            <div class="col-auto"><img src="images/partners/ministry_of_Transport (1).png" class="d-block partner-logo" alt="Ministry of Transport Logo"></div>
+                            <div class="col-auto"><img src="images/partners/start somewhere (1).png" class="d-block partner-logo" alt="Start Somewhere Logo"></div>
+                            <div class="col-auto"><img src="images/partners/UNEP - Transparent_1 (1).png" class="d-block partner-logo" alt="UNEP Logo"></div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="row justify-content-center">
-                             <div class="col-auto"><img src="images/partners/victory-farms (1).png" class="d-block" alt="Victory Farms Logo" style="max-height: 80px; filter: grayscale(50%);"></div>
+                        <div class="row justify-content-center align-items-center g-3">
+                             <div class="col-auto"><img src="images/partners/victory-farms (1).png" class="d-block partner-logo" alt="Victory Farms Logo"></div>
                         </div>
                     </div>
                 </div>
@@ -181,18 +230,77 @@
                 </button>
             </div>
         </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section py-5 bg-primary text-light" id="join">
+    </section>    <!-- JOIN THE TRANSFORMATION Section -->
+    <section class="py-5 section-light" id="join">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center">
-                    <h2>Ready to Make a Difference?</h2>
-                    <p class="lead">Join the movement and help us recycle plastics and empower lives.</p>
-                    <div class="mt-4">
-                        <a href="#join" class="btn btn-light btn-lg me-2">Join Us</a>
-                        <a href="#partner" class="btn btn-outline-light btn-lg">Partner With Us</a>
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold mb-4">JOIN THE TRANSFORMATION</h2>                
+                <p class="lead cta-description col-lg-8 mx-auto">
+                    Our aim is to process 100,000 tons of plastic waste by 2030. With your help we can work towards 
+                    a future where waste becomes wealth and communities thrive.
+                </p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <!-- Help Transform -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="transformation-card">
+                        <div class="card-image-wrapper">
+                            <img src="images/MRF/bottletops.jpg" class="card-img" alt="Plastic waste transformation">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h5 class="card-title">HELP TRANSFORM</h5>
+                            <p class="card-description">
+                                Your donations and partnerships enable us to expand our waste processing capabilities 
+                                and reach more communities.
+                            </p>
+                            <div class="card-actions">
+                                <a href="get-involved.html" class="btn btn-primary btn-sm">Make a donation</a>
+                                <a href="get-involved.html#fundraise" class="btn btn-outline-primary btn-sm">Start fundraiser</a>
+                                <a href="get-involved.html#partner" class="btn btn-outline-primary btn-sm">Partner with us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Join the Team -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="transformation-card">
+                        <div class="card-image-wrapper">
+                            <img src="images/MRF/GJenge-229_2__1.png" class="card-img" alt="Team collaboration">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h5 class="card-title">JOIN THE TEAM</h5>
+                            <p class="card-description">
+                                To complete one of the most ambitious environmental projects in Kenya, we seek dedicated 
+                                minds to join our mission.
+                            </p>
+                            <div class="card-actions">
+                                <a href="contact.html" class="btn btn-primary btn-sm">Join the team</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Spread the Word -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="transformation-card">
+                        <div class="card-image-wrapper">
+                            <img src="images/MRF/Doubler.png" class="card-img" alt="Community impact">
+                            <div class="card-overlay"></div>
+                        </div>
+                        <div class="card-content">
+                            <h5 class="card-title">SPREAD THE WORD</h5>
+                            <p class="card-description">
+                                The power of community is what drives our success. Be part of the movement 
+                                and help us reach more people.
+                            </p>
+                            <div class="card-actions">
+                                <a href="contact.html#social" class="btn btn-primary btn-sm">Let's connect</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -200,20 +308,62 @@
     </section>
 
     <!-- Footer -->
-    <div id="footer-placeholder"></div>
-
-    <!-- Bootstrap JS Bundle with Popper -->
+    <div id="footer-placeholder"></div>    <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Footer -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });        document.addEventListener('DOMContentLoaded', function() {
+            // Load Header and Footer
+            fetch('components/header.html')
+                .then(response => response.text())
+                .then(html => {
+                    const headerPlaceholder = document.getElementById('header-placeholder');
+                    headerPlaceholder.innerHTML = html;
+                    
+                    // Execute scripts in the loaded header
+                    const scripts = headerPlaceholder.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        script.remove(); // Remove the original script tag
+                    });
+                })
+                .catch(error => console.error('Error loading header:', error));
+                
             fetch('components/footer.html')
                 .then(response => response.text())
                 .then(html => {
-                    document.getElementById('footer-placeholder').innerHTML = html;
-                });
+                    const footerPlaceholder = document.getElementById('footer-placeholder');
+                    footerPlaceholder.innerHTML = html;
+                    
+                    // Execute scripts in the loaded footer (if any)
+                    const scripts = footerPlaceholder.querySelectorAll('script');
+                    scripts.forEach(script => {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.head.appendChild(newScript);
+                        script.remove(); // Remove the original script tag
+                    });
+                })
+                .catch(error => console.error('Error loading footer:', error));
         });
-        </script>
+    </script>
     
 </body>
 </html>
