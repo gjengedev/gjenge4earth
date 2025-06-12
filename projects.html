@@ -17,21 +17,101 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/animation.css">
     
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- AOS CSS -->    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <script>
-        // Bootstrap native theme initialization - runs immediately to prevent flash        (function() {
+        // Bootstrap native theme initialization - runs immediately to prevent flash
+        (function() {
             const savedTheme = localStorage.getItem('theme') || 'dark';
             document.documentElement.setAttribute('data-bs-theme', savedTheme);
         })();
     </script>
+    
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        /* Enhanced dark mode support */
+        [data-bs-theme="dark"] {
+            color: #ffffff !important;
+        }
+        
+        [data-bs-theme="dark"] .card {
+            background-color: var(--bs-dark-bg-subtle);
+            color: #ffffff;
+            border-color: rgba(255, 255, 255, 0.125);
+        }
+        
+        [data-bs-theme="dark"] .card-body {
+            color: #ffffff;
+        }
+        
+        [data-bs-theme="dark"] .card-title {
+            color: #ffffff !important;
+        }
+        
+        [data-bs-theme="dark"] .card-text {
+            color: #e9ecef !important;
+        }
+        
+        [data-bs-theme="dark"] h1,
+        [data-bs-theme="dark"] h2,
+        [data-bs-theme="dark"] h3,
+        [data-bs-theme="dark"] h4,
+        [data-bs-theme="dark"] h5,
+        [data-bs-theme="dark"] h6 {
+            color: #ffffff !important;
+        }
+        
+        [data-bs-theme="dark"] p {
+            color: #e9ecef !important;
+        }
+        
+        [data-bs-theme="dark"] .text-muted {
+            color: #adb5bd !important;
+        }
+        
+        /* Enhanced card hover effects */
+        .card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        [data-bs-theme="dark"] .card:hover {
+            box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+        }
+        
+        /* Progress bar theming */
+        [data-bs-theme="dark"] .progress {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        /* Badge theming */
+        [data-bs-theme="dark"] .badge {
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        /* Project Impact section styling */
+        .bg-primary {
+            background-color: var(--bs-primary) !important;
+        }
+        
+        /* Icon theming for dark mode */
+        [data-bs-theme="dark"] .bi {
+            color: #ffffff;
+        }    </style>
 </head>
 <body>    <!-- Navigation -->
     <div id="header-placeholder"></div>
 
     <!-- Projects Hero -->
-    <header class="position-relative py-5 text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/Site_pics/20250501_171409.jpg') center/cover no-repeat; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
+    <header class="position-relative py-5 text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/Dumpsite/20250501_165842.jpg') center/cover no-repeat; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
         <div class="container">
             <h1 class="display-4 fw-bold animate-slide-up">Our <span class="text-primary">Projects</span></h1>
             <p class="lead">Transforming communities through sustainable waste management initiatives</p>
@@ -51,29 +131,29 @@
                     <div class="card h-100 text-center">
                         <div class="card-body">
                             <i class="bi bi-building fs-1 text-success mb-3"></i>
-                            <h5 class="card-title">Urban Recycling Hubs</h5>
-                            <p class="card-text">Creating community centers that improve sanitation, livelihoods, and dignity through organized waste management.</p>
+                            <h5 class="card-title">GPRO Owned Hubs</h5>
+                            <p class="card-text">Creating community recycling centers that improve dignity through organized waste management.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card h-100 text-center">
                         <div class="card-body">
-                            <i class="bi bi-gender-female fs-1 text-primary mb-3"></i>
-                            <h5 class="card-title">Women-Led Aggregation Centers</h5>
-                            <p class="card-text">Empowering women to lead waste collection centers, increasing incomes and reducing gender-based violence.</p>
+                            <i class="bi bi-people fs-1 text-primary mb-3"></i>
+                            <h5 class="card-title">Community Owned MRFs</h5>
+                            <p class="card-text">Empowering CBOs and collectors to set up waste collection centers, increasing incomes.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card h-100 text-center">
                         <div class="card-body">
-                            <i class="bi bi-mortarboard fs-1 text-warning mb-3"></i>
-                            <h5 class="card-title">Educational Campaigns</h5>
-                            <p class="card-text">Engaging youth and communities on recycling practices and climate action through innovative educational programs.</p>
+                            <i class="bi bi-diagram-3 fs-1 text-primary mb-3"></i>
+                            <h5 class="card-title">Hybrid arrangement</h5>
+                            <p class="card-text">Partnering with youth and communities to buy machinery and have a lipa pole pole scheme. </p>
                         </div>
-                    </div>
-                </div>
+                    </div>                </div>
+                <!-- <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
                     <div class="card h-100 text-center">
                         <div class="card-body">
                             <i class="bi bi-building fs-1 text-info mb-3"></i>
@@ -81,13 +161,11 @@
                             <p class="card-text">Building recycling facilities and processing centers in underserved areas.</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
-    </section>
-
-    <!-- Current Projects -->
-    <section class="py-5 bg-light">
+    </section>    <!-- Current Projects -->
+    <section class="py-5 bg-body-secondary">
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up">Current Projects</h2>
             <div class="row g-4">

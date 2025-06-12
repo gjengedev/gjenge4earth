@@ -115,22 +115,33 @@
         .success-story-card:hover {
             transform: translateY(-5px);
         }
-        
-        /* Modal image styling */
+          /* Modal image styling */
         #imageModalImage {
             max-height: 70vh;
             object-fit: contain;
         }
+        
+        /* Text shadow for overlays */
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+        
+        /* Enhanced overlay styling */
+        .overlay-content {
+            backdrop-filter: blur(2px);
+        }
     </style>
 </head>
 <body>    <!-- Navigation -->
-    <div id="header-placeholder"></div>
-
-    <!-- Impact Hero -->
+    <div id="header-placeholder"></div>    <!-- Impact Hero -->
     <header class="position-relative py-5 text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/Dumpsite/20250501_172255.jpg') center/cover no-repeat; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
         <div class="container">
             <h1 class="display-4 fw-bold animate-slide-up">Our <span class="text-primary">Impact</span></h1>
             <p class="lead">Measuring our contribution to environmental sustainability and community empowerment</p>
+            <div class="mt-4">
+                <a href="#impact" class="btn btn-primary btn-lg me-2">View Our Achievements</a>
+                <a href="get-involved.html" class="btn btn-outline-light btn-lg">Join Our Mission</a>
+            </div>
         </div>
         
         <!-- Scroll indicator -->
@@ -159,6 +170,54 @@
                 </div>
                 <div class="col-6 col-md-2">
                     <img src="images/SDGs/sdg12.png" alt="SDG 12: Responsible Consumption and Production" class="img-fluid sdg-icon-img" data-sdg-id="sdg12_detail" data-bs-toggle="modal" data-bs-target="#sdgModal">
+                </div>
+            </div>        </div>
+    </section>
+
+    <!-- Community Engagement -->
+    <section class="py-5 bg-body-secondary">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Community Engagement</h2>
+            <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">See how we engage with communities to create lasting change</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/Site_pics/african-community.jpg" class="card-img-top" alt="Community Outreach" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Community Outreach</h5>
+                            <p class="card-text">Collecting waste through our community networks and our campaigns.</p>
+                            <div class="text-muted small">
+                                <i class="bi bi-people-fill me-1"></i> 200+ households reached monthly
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/Site_pics/dumpsite.jpg" class="card-img-top" alt="Site Assessment" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Site Assessment</h5>
+                            <p class="card-text">Conducting thorough assessments of waste sites to understand community needs and design effective intervention strategies.</p>
+                            <div class="text-muted small">
+                                <i class="bi bi-geo-alt-fill me-1"></i> 15+ sites assessed across Kenya
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 shadow border-0">
+                        <img src="images/Site_pics/20250519_130157.jpg" class="card-img-top" alt="Field Operations" style="height: 250px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Field Operations</h5>
+                            <p class="card-text">Attending events and workshops training on waste collection and handling.</p>
+                            <div class="text-muted small">
+                                <i class="bi bi-clock-fill me-1"></i> Events and businesses
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -218,14 +277,16 @@
     <section class="py-5">
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up">Our Impact in Detail</h2>
-            <div class="row g-4">
-                <!-- Community Impact -->
+            <div class="row g-4">                <!-- Community Impact -->
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 border-primary">
-                        <div class="card-header bg-primary text-white">
+                    <div class="card h-100 border-primary position-relative overflow-hidden">
+                        <div class="position-absolute top-0 start-0 w-100 h-100">
+                            <img src="images/Site_pics/Transformation.webp" class="w-100 h-100" style="object-fit: cover; opacity: 0.1;" alt="Community Transformation Background">
+                        </div>
+                        <div class="card-header bg-primary text-white position-relative">
                             <h5 class="card-title mb-0"><i class="bi bi-people-fill me-2"></i>Community Impact</h5>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body position-relative">
                             <ul class="list-unstyled">
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>85% income increase</strong> among recyclers</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Improved health and safety conditions for low income neighborhoods</li>
@@ -238,11 +299,14 @@
                 
                 <!-- Environmental Impact -->
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 border-success">
-                        <div class="card-header bg-success text-white">
+                    <div class="card h-100 border-success position-relative overflow-hidden">
+                        <div class="position-absolute top-0 start-0 w-100 h-100">
+                            <img src="images/Site_pics/plastic-circularity.jpeg" class="w-100 h-100" style="object-fit: cover; opacity: 0.1;" alt="Plastic Circularity Background">
+                        </div>
+                        <div class="card-header bg-success text-white position-relative">
                             <h5 class="card-title mb-0"><i class="bi bi-globe2 me-2"></i>Environmental Impact</h5>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body position-relative">
                             <ul class="list-unstyled">
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>500+ tons</strong> diverted from oceans</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Reduced landfill waste significantly</li>
@@ -251,14 +315,16 @@
                             </ul>
                         </div>
                     </div>
-                </div>
-                  <!-- Gender Empowerment -->
+                </div>                  <!-- Gender Empowerment -->
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 border-danger">
-                        <div class="card-header bg-danger text-white">
+                    <div class="card h-100 border-danger position-relative overflow-hidden">
+                        <div class="position-absolute top-0 start-0 w-100 h-100">
+                            <img src="images/Site_pics/Workshop.jpg" class="w-100 h-100" style="object-fit: cover; opacity: 0.1;" alt="Women Empowerment Workshop Background">
+                        </div>
+                        <div class="card-header bg-danger text-white position-relative">
                             <h5 class="card-title mb-0"><i class="bi bi-gender-female me-2"></i>Gender Empowerment</h5>
                         </div>
-                        <div class="card-body">
+                        <div class="card-body position-relative">
                             <ul class="list-unstyled">
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i><strong>3,500+ women</strong> in sustainable employment</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Women leadership in recycling</li>
@@ -394,8 +460,62 @@
                     </div>
                 </div>
             </div>
+        </div>    </div>
+
+    <!-- Waste Problem & Solution Visual -->
+    <section class="py-5 bg-body-secondary">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">From Problem to Solution</h2>
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                    <div class="position-relative">
+                        <img src="images/Site_pics/plastic waste.jpg" class="img-fluid rounded shadow-lg" alt="Plastic Waste Problem" style="width: 100%; height: 300px; object-fit: cover;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                            <div class="text-center text-white">
+                                <h3 class="fw-bold text-shadow">THE PROBLEM</h3>
+                                <p class="lead text-shadow">Unmanaged Plastic Waste</p>
+                            </div>
+                        </div>
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-danger bg-opacity-40 rounded"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                    <div class="position-relative">
+                        <img src="images/Site_pics/plastic-waste.jpg" class="img-fluid rounded shadow-lg" alt="Plastic Waste Solution" style="width: 100%; height: 300px; object-fit: cover;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center justify-content-center">
+                            <div class="text-center text-white">
+                                <h3 class="fw-bold text-shadow">THE SOLUTION</h3>
+                                <p class="lead text-shadow">Organized Collection & Processing</p>
+                            </div>
+                        </div>
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-success bg-opacity-40 rounded"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Impact Images -->
+            <div class="row g-4 mt-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card border-0 shadow">
+                        <img src="images/Site_pics/dust-bin.jpg" class="card-img-top" alt="Proper Waste Management" style="height: 200px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Businesses Waste Sensitization</h5>
+                            <p class="card-text text-muted">Installing proper waste collection systems in business centers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card border-0 shadow">
+                        <img src="images/Site_pics/partner.jpg" class="card-img-top" alt="Community Partnerships" style="height: 200px; object-fit: cover;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Community Partnerships</h5>
+                            <p class="card-text text-muted">Working with homes and residentials to collect plastic waste</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <!-- Impact Visualization -->
     <section class="py-5" data-aos="fade-up">
@@ -423,48 +543,119 @@
     </section>    <!-- Success Stories -->
     <section class="py-5 bg-body-secondary">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">What They Said</h2>
-            <div class="row g-4">
+            <h2 class="text-center mb-5" data-aos="fade-up">What They Said</h2>            <div class="row g-4">
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 shadow-sm" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" data-image-src="images/Site_pics/success.jpg" data-image-title="Community Transformation" data-image-description="Witnessing the transformation of communities through sustainable waste management and economic empowerment initiatives.">
-                        <img src="images/Site_pics/success.jpg" class="card-img-top" alt="Community Transformation Success" style="height: 250px; object-fit: cover;">
+                    <div class="card h-100 shadow-sm" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" data-image-src="images/success.jpg" data-image-title="Success Story 1" data-image-description="One of our inspiring success stories showcasing the positive impact of our environmental initiatives on local communities.">
+                        <img src="images/success.jpg" class="card-img-top" alt="Success Story 1" style="height: 250px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Community Transformation</h5>
-                            <p class="card-text">About people who live in the dumpsite</p>
-                            <!-- <a href="#" class="btn btn-link" onclick="event.stopPropagation();">Read More <i class="bi bi-arrow-right"></i></a> -->
+                            <h5 class="card-title">Transforming Lives</h5>
+                            <p class="card-text">"This program has changed my life completely. I now have a steady income and can support my family with dignity." - Sarah K.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 shadow-sm" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" data-image-src="images/Site_pics/success-2.jpg" data-image-title="Environmental Impact" data-image-description="Real results from our recycling initiatives showing cleaner environments and reduced plastic waste in communities.">
-                        <img src="images/Site_pics/success-2.jpg" class="card-img-top" alt="Environmental Impact Success" style="height: 250px; object-fit: cover;">
+                    <div class="card h-100 shadow-sm" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" data-image-src="images/success-2.jpg" data-image-title="Success Story 2" data-image-description="Another remarkable success story demonstrating how our initiatives create lasting positive change in communities.">
+                        <img src="images/success-2.jpg" class="card-img-top" alt="Success Story 2" style="height: 250px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Environmental Impact</h5>
-                            <p class="card-text">About impact on people</p>
-                            <!-- <a href="#" class="btn btn-link" onclick="event.stopPropagation();">Read More <i class="bi bi-arrow-right"></i></a> -->
+                            <h5 class="card-title">Community Growth</h5>
+                            <p class="card-text">"Our entire community has benefited. The environment is cleaner and we all have new opportunities." - James M.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 shadow-sm" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" data-image-src="images/Site_pics/success-3.jpg" data-image-title="Economic Empowerment" data-image-description="Stories of individuals and families who have built sustainable livelihoods through our waste collection and recycling programs.">
-                        <img src="images/Site_pics/success-3.jpg" class="card-img-top" alt="Economic Empowerment Success" style="height: 250px; object-fit: cover;">
+                    <div class="card h-100 shadow-sm" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#imageModal" data-image-src="images/success-3.jpg" data-image-title="Success Story 3" data-image-description="A third inspiring success story highlighting the environmental and social benefits of our sustainable programs.">
+                        <img src="images/success-3.jpg" class="card-img-top" alt="Success Story 3" style="height: 250px; object-fit: cover;">
                         <div class="card-body">
-                            <h5 class="card-title">Behavior</h5>
-                            <p class="card-text">About Consumption</p>
-                            <!-- <a href="#" class="btn btn-link" onclick="event.stopPropagation();">Read More <i class="bi bi-arrow-right"></i></a> -->
+                            <h5 class="card-title">Sustainable Future</h5>
+                            <p class="card-text">"Working here has given me skills and purpose. I'm proud to be part of building a sustainable future." - Grace N.</p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>        </div>
+    </section>
+
+    <!-- Field Work Documentation -->
+    <section class="py-5">
+        <!-- <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Field Work Documentation</h2>
+            <p class="text-center lead mb-5" data-aos="fade-up" data-aos-delay="100">Real moments from our ongoing operations and community interventions</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="card border-0 shadow-sm">
+                                <img src="images/Site_pics/20250428_141821.jpg" class="card-img-top" alt="Community Site Visit" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h6 class="card-title">April 2025 - Community Assessment</h6>
+                                    <p class="card-text small text-muted">Conducting baseline assessments in new intervention areas to understand waste management challenges and opportunities.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card border-0 shadow-sm">
+                                <img src="images/Site_pics/20250501_172318.jpg" class="card-img-top" alt="Waste Collection Operations" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h6 class="card-title">May 2025 - Collection Operations</h6>
+                                    <p class="card-text small text-muted">Active waste collection and sorting operations in progress, demonstrating our systematic approach to plastic waste management.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="card border-0 shadow-sm">
+                                <img src="images/Site_pics/20250501_172411.jpg" class="card-img-top" alt="Processing Operations" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h6 class="card-title">May 2025 - Processing Facility</h6>
+                                    <p class="card-text small text-muted">Our processing facilities in action, where collected plastic waste is transformed into valuable materials for construction and manufacturing.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card border-0 shadow-sm">
+                                <img src="images/Site_pics/20250501_172454.jpg" class="card-img-top" alt="Site Monitoring" style="height: 200px; object-fit: cover;">
+                                <div class="card-body">
+                                    <h6 class="card-title">May 2025 - Quality Monitoring</h6>
+                                    <p class="card-text small text-muted">Regular monitoring and quality control processes ensure our operations meet environmental and safety standards.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            
+            <!-- Timeline Achievement -->
+            <!-- <div class="row mt-5">
+                <div class="col-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="alert alert-success border-0 shadow-sm">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="alert-heading mb-2"><i class="bi bi-calendar-check me-2"></i>Recent Milestones</h5>
+                                <p class="mb-0">Our documentation shows consistent progress in waste reduction and community engagement across all operational sites throughout 2025.</p>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <h3 class="text-success mb-0">15+</h3>
+                                <small class="text-muted">Sites Documented This Year</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
         </div>
-    </section><!-- Call to Action -->
-    <section class="py-5 bg-primary-subtle text-center">
-        <div class="container">
-            <h2 class="text-primary" data-aos="fade-up">Be Part of Our Impact</h2>
-            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Join us in creating positive environmental change.</p>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 position-relative text-center" style="background: linear-gradient(rgba(13, 110, 253, 0.85), rgba(13, 110, 253, 0.85)), url('images/Site_pics/join the team.jpg') center/cover no-repeat;">
+        <div class="container position-relative">
+            <h2 class="text-white" data-aos="fade-up">Be Part of Our Impact</h2>
+            <p class="lead mb-4 text-white" data-aos="fade-up" data-aos-delay="100">Join us in creating positive environmental change.</p>
             <div data-aos="fade-up" data-aos-delay="200">
-                <a href="get-involved.html" class="btn btn-primary btn-lg mx-2">Get Involved</a>
-                <a href="get-involved.html#donation-path" class="btn btn-outline-primary btn-lg mx-2">Support Us</a>
+                <a href="get-involved.html" class="btn btn-light btn-lg mx-2">Get Involved</a>
+                <a href="get-involved.html#donation-path" class="btn btn-outline-light btn-lg mx-2">Support Us</a>
             </div>
         </div>
     </section>

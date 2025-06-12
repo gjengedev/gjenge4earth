@@ -947,14 +947,14 @@ a:hover {
     min-height: 100vh;
     padding: 2rem 0;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                url('../images/MRF/MoreTrash.png') center/cover;
+                url('../images/Dumpsite/20250501_165621.jpg') center/cover;
     color: var(--text-inverse);
     position: relative;
 }
 
 .hero-bottletops {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                url('../images/MRF/bottletops.jpg') center/cover no-repeat !important;
+                url('../images/Dumpsite/20250501_165621.jpg') center/cover no-repeat !important;
     min-height: 100vh;
     display: flex;
     align-items: center;
