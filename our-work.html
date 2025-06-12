@@ -19,9 +19,9 @@
     
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <script>
-        // Bootstrap native theme initialization - runs immediately to prevent flash        (function() {
+      <script>
+        // Bootstrap native theme initialization - runs immediately to prevent flash
+        (function() {
             const savedTheme = localStorage.getItem('theme') || 'dark';
             document.documentElement.setAttribute('data-bs-theme', savedTheme);
         })();
@@ -31,75 +31,20 @@
     <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
-    <section class="py-5 text-center bg-primary text-white">
+    <header class="position-relative py-5 text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/MRF/Plastic_washing_line.png') center/cover no-repeat; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
         <div class="container">
-            <h1 class="display-4" data-aos="fade-up">Building Circular Systems</h1>
-            <p class="lead" data-aos="fade-up" data-aos-delay="100">Transforming plastic waste into valuable resources through innovative recycling processes.</p>
+            <h1 class="display-4 fw-bold animate-slide-up">Building <span class="text-primary">Circular Systems</span></h1>
+            <p class="lead">Transforming plastic waste into valuable resources through innovative recycling processes</p>
         </div>
-    </section>
+        
+        <!-- Scroll indicator -->
+        <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4">
+            <i class="bi bi-chevron-down text-white scroll-indicator"></i>
+        </div>
+    </header>
 
-    <!-- Process Section -->
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Our Recycling Process</h2>
-            <div class="row g-4">
-                <!-- Step 1: Collection & Sorting -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <img src="images/MRF/GJenge-229_2__1.png" alt="Collection & Sorting" class="img-fluid img-100h">
-                            </div>
-                            <h5 class="card-title">Collection & Sorting</h5>
-                            <p class="card-text">We collect and sort various types of plastic waste from our community partners.</p>
-                            <span class="badge bg-primary">Step 1</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Step 2: Crushing -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <img src="images/MRF/Crushers.png" alt="Crushing" class="img-fluid img-100h">
-                            </div>
-                            <h5 class="card-title">Shredding Process</h5>
-                            <p class="card-text">The sorted plastic is shredded into small, uniform pieces for processing.</p>
-                            <span class="badge bg-primary">Step 2</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Step 3: Processing -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <img src="images/MRF/plastic-waste-washing-machine.png" alt="Processing" class="img-fluid img-100h">
-                            </div>
-                            <h5 class="card-title">Material Processing</h5>
-                            <p class="card-text">Crushed plastic undergoes cleaning and processing to ensure quality.</p>
-                            <span class="badge bg-primary">Step 3</span>
-                        </div>
-                    </div>
-                </div>
-                <!-- Step 4: Final Product -->
-                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <img src="images/MRF/crushed-plastic.png" alt="Final Product" class="img-fluid img-100h">
-                            </div>
-                            <h5 class="card-title">Final Products</h5>
-                            <p class="card-text">Processed materials are ready for production use.</p>
-                            <span class="badge bg-success">Step 4</span>
-                        </div>
-                    </div>
-                </div>
-            </div>        </div>
-    </section>
-    
-    <!-- Community Empowerment Section -->
-    <section class="py-5 bg-white">
+       <!-- Community Empowerment Section -->
+    <section class="py-5 bg-body-secondary">
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up">Empowering Communities Through Recycling</h2>
             <div class="row g-4">
@@ -108,7 +53,7 @@
                     <div class="card h-100">
                         <img src="images/MRF/GJenge-229_2__1.png" class="card-img-top img-cover-200" alt="Community empowerment">
                         <div class="card-body">
-                            <h5 class="card-title">Material Recovery & Community Empowerment</h5>
+                            <h5 class="card-title">Local Community Empowerment</h5>
                             <p class="card-text">We transform informal waste pickers into community recycling leaders, providing training, equipment, and sustainable income opportunities while improving working conditions and dignity.</p>
                         </div>
                     </div>
@@ -130,8 +75,8 @@
                     <div class="card h-100">
                         <img src="images/MRF/crushed-plastic.png" class="card-img-top img-cover-200" alt="Youth innovation">
                         <div class="card-body">
-                            <h5 class="card-title">Youth Change-Makers</h5>
-                            <p class="card-text">We support youth innovations that turn waste into valuable products, fostering the next generation of environmental leaders and entrepreneurs who understand both technology and community needs.</p>
+                            <h5 class="card-title">Material Recovery by Youth</h5>
+                            <p class="card-text">We support youth with innovations that turn waste into valuable products, fostering the next generation of environmental leaders and entrepreneurs who understand both technology and community needs.</p>
                         </div>
                     </div>
                 </div>
@@ -139,10 +84,134 @@
         </div>
     </section>
 
-    <!-- Materials Section -->
-    <section class="py-5 bg-light">
+    <!-- Process Section -->
+    <section class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5" data-aos="fade-up">Our Materials Processing</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">Our Recycling Value Chain</h2>
+            <div class="row g-4">
+                <!-- Step 1: Collection & Sorting -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="images/MRF/GJenge-229_2__1.png" alt="Collection & Sorting" class="img-fluid img-100h">
+                            </div>
+                            <h5 class="card-title mb-5"><strong>Step 1: Collection</strong></h5>
+                            <p class="card-text">Gathering post-consumer or post-industrial plastic waste from various sources — households, businesses, industries, or landfills. This can involve partnerships with waste pickers, municipal systems, or buy-back centers.</p>
+                            <span class="badge bg-primary">Step 1</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 2: Crushing -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="images/MRF/Crushers.png" alt="Crushing" class="img-fluid img-100h">
+                            </div>
+                            <h5 class="card-title mb-5"><strong>Step 2: Sorting & Cleaning</strong></h5> 
+                            <p class="card-text">Shredding, melting, or extruding the clean plastics into flakes, pellets, or new shapes. This may involve machines like crushers, extruders, or presses depending on the end product (e.g., tiles, lumber, packaging).</p>
+                            <span class="badge bg-success">Step 2</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 3: Processing -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="images/MRF/plastic-waste-washing-machine.png" alt="Processing" class="img-fluid img-100h">
+                            </div>
+                            <h5 class="card-title mb-5"><strong>Step 3: Material Processing</strong></h5>
+                            <p class="card-text">Crushed plastic undergoes cleaning and processing to ensure quality.</p>
+                            <span class="badge bg-primary">Step 3</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 4: Final Product -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <img src="images/MRF/crushed-plastic.png" alt="Final Product" class="img-fluid img-100h">
+                            </div>
+                            <h5 class="card-title mb-5"><strong>Step 4: Distribution</strong></h5>
+                            <p class="card-text">We deliver ready to manufacture plastic for your company's operation.</p>
+                            <span class="badge bg-success">Step 4</span>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <p class="lead mb-4 pt-2 mt-5 text-center" data-aos="fade-up" data-aos-delay="100">Are you part of this value chain? Would you like to supply or buy from us?</p>
+            <div data-aos="fade-up" data-aos-delay="200" class="mt-5 text-center">
+                <a href="get-involved.html" class="btn btn-primary btn-lg me-2">Get Involved</a>
+            </div>      
+        </div>
+    </section>
+    
+    <!-- Plastics We Recycle Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Types of Plastics We Recycle</h2>
+            <div class="row g-4">
+                <!-- HDPE -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="display-1 text-primary mb-3">2</div>
+                            <h5 class="card-title">HDPE</h5>
+                            <h6 class="text-muted mb-3">High-Density Polyethylene</h6>
+                            <p class="card-text">Found in milk jugs, detergent bottles, and plastic bags. Highly recyclable and chemical-resistant.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PP -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="display-1 text-success mb-3">5</div>
+                            <h5 class="card-title">PP</h5>
+                            <h6 class="text-muted mb-3">Polypropylene</h6>
+                            <p class="card-text">Used in yogurt containers, bottle caps, and food packaging. Heat-resistant and widely recyclable.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- PET -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="display-1 text-primary mb-3">1</div>
+                            <h5 class="card-title">PET</h5>
+                            <h6 class="text-muted mb-3">Polyethylene Terephthalate</h6>
+                            <p class="card-text">Common in water bottles and food containers. One of the most recycled plastics worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- LDPE -->
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 text-center">
+                        <div class="card-body">
+                            <div class="display-1 text-danger mb-3">4</div>
+                            <h5 class="card-title">LDPE</h5>
+                            <h6 class="text-muted mb-3">Low-Density Polyethylene</h6>
+                            <p class="card-text">Used in shopping bags, food wraps, and squeezable bottles. Flexible and chemical-resistant.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200" class="mt-5 text-center">
+                <a href="contact.html" class="btn btn-primary btn-lg me-2">Make order</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section class="py-5 bg-body-secondary">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up">Our Materials Processing Services</h2>
             <div class="row g-4 justify-content-center">
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card h-100 text-center">
@@ -165,7 +234,7 @@
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card h-100 text-center">
                         <div class="card-body">
-                            <i class="bi bi-gear fs-1 text-info mb-3"></i>
+                            <i class="bi bi-gear fs-1 text-success mb-3"></i>
                             <h5 class="card-title">Agglomeration</h5>
                             <p class="card-text">Advanced processing techniques to create high-quality recycled materials for manufacturing.</p>
                         </div>
@@ -173,9 +242,12 @@
                 </div>
             </div>
         </div>
+        <div data-aos="fade-up" data-aos-delay="200" class="mt-5 text-center">
+                <a href="contact.html" class="btn btn-primary btn-lg me-2">Contact Us</a>
+            </div>
     </section>
 
-    <!-- Partners Section -->
+     <!-- Partners Section -->
     <section class="py-5">
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up">Our Partners</h2>
@@ -209,33 +281,31 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="py-5 bg-primary text-white text-center">
+    </section>    <!-- Call to Action -->
+    <section class="py-5 bg-primary-subtle text-center">
         <div class="container">
-            <h2 data-aos="fade-up">Join Our Mission</h2>
+            <h2 class="text-primary" data-aos="fade-up">Join Our Mission</h2>
             <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">Partner with us to create a sustainable future through innovative recycling solutions.</p>
             <div data-aos="fade-up" data-aos-delay="200">
-                <a href="contact.html" class="btn btn-light btn-lg me-2">Contact Us</a>
-                <a href="get-involved.html" class="btn btn-outline-light btn-lg">Get Involved</a>
+                <a href="contact.html" class="btn btn-primary btn-lg me-2">Contact Us</a>
+                <a href="get-involved.html" class="btn btn-outline-primary btn-lg">Get Involved</a>
             </div>
         </div>
-    </section>    <!-- Footer -->
+    </section><!-- Footer -->
     <div id="footer-placeholder"></div>
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>    <script>
         // Initialize AOS
         AOS.init({
             duration: 800,
             once: true,
             offset: 100
-        });        document.addEventListener('DOMContentLoaded', function() {
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
             // Load Header and Footer
             fetch('components/header.html')
                 .then(response => response.text())

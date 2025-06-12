@@ -43,6 +43,38 @@ const handleParallax = () => {
     }, { passive: true });
 };
 
+// Smooth scroll to next section when scroll indicator is clicked
+function initScrollIndicators() {
+    const scrollIndicators = document.querySelectorAll('.scroll-indicator');
+    
+    scrollIndicators.forEach(indicator => {
+        indicator.style.cursor = 'pointer';
+        indicator.addEventListener('click', () => {
+            // Find the hero section
+            const heroSection = indicator.closest('header, section');
+            if (heroSection) {
+                // Find the next section after the hero
+                const nextSection = heroSection.nextElementSibling;
+                if (nextSection) {
+                    nextSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+          // Add hover effect
+        indicator.addEventListener('mouseenter', () => {
+            indicator.style.transform = 'scale(1.2)';
+            indicator.style.transition = 'transform 0.3s ease';
+        });
+        
+        indicator.addEventListener('mouseleave', () => {
+            indicator.style.transform = 'scale(1)';
+        });
+    });
+}
+
 // Initialize everything when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize AOS library
@@ -58,4 +90,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize other features
     handleParallax();
+    initScrollIndicators();
 });

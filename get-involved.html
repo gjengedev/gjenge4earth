@@ -18,78 +18,89 @@
     <link rel="stylesheet" href="styles/animation.css">
     
     <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">    <script>
         // Bootstrap native theme initialization - runs immediately to prevent flash
         (function() {
             const savedTheme = localStorage.getItem('theme') || 'dark';
             document.documentElement.setAttribute('data-bs-theme', savedTheme);
         })();
-    </script>    </script>
+    </script>
 </head>
-<body>
-    <!-- Navigation -->
+<body>    <!-- Navigation -->
      <div id="header-placeholder"></div>
 
-    <!-- Hero Commitment Wall -->
-    <section class="py-5 text-center bg-light">
+    <!-- Hero Section -->
+    <header class="position-relative py-5 text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/MRF/GJenge-229_2__1.png') center/cover no-repeat; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
         <div class="container">
-            <h1 class="display-4 mb-4">Make a Difference</h1>
-            <p class="lead mb-5">Choose how you want to contribute to a sustainable future.</p>
+            <h1 class="display-4 fw-bold animate-slide-up">Make a <span class="text-primary">Difference</span></h1>
+            <p class="lead">Choose how you want to contribute to a sustainable future through community empowerment</p>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4">
+            <i class="bi bi-chevron-down text-white scroll-indicator"></i>
+        </div>
+    </header>    <!-- How to Get Involved Section -->
+    <section class="py-5 text-center">
+        <div class="container">
+            <h2 class="display-5 mb-4" data-aos="fade-up">Get Involved Today</h2>
+            <p class="lead mb-5" data-aos="fade-up" data-aos-delay="100">Choose how you want to contribute to a sustainable future.</p>
             <div class="row justify-content-center g-4">
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body d-flex flex-column">
-                            <h2 class="card-title h4">I Want to Donate</h2>
+                            <i class="bi bi-heart-fill fs-1 text-danger mb-3"></i>
+                            <h3 class="card-title h4">I Want to Donate</h3>
                             <p class="card-text">Your contribution, big or small, helps us empower communities and recycle waste.</p>
                             <a href="#donation-path" class="btn btn-primary mt-auto">Donate Now</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body d-flex flex-column">
-                            <h2 class="card-title h4">I Want to Partner</h2>
+                            <i class="bi bi-handshake fs-1 text-success mb-3"></i>
+                            <h3 class="card-title h4">I Want to Partner</h3>
                             <p class="card-text">Collaborate with us to amplify our impact and achieve shared sustainability goals.</p>
                             <a href="#partnership-tiers" class="btn btn-success mt-auto">Become a Partner</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card h-100 shadow-sm">
                         <div class="card-body d-flex flex-column">
-                            <h2 class="card-title h4">I Want to Volunteer</h2>
+                            <i class="bi bi-people-fill fs-1 text-primary mb-3"></i>
+                            <h3 class="card-title h4">I Want to Volunteer</h3>
                             <p class="card-text">Join our team of passionate individuals and contribute your skills to our projects.</p>
-                            <a href="#volunteer-opportunities" class="btn btn-info mt-auto text-white">Volunteer With Us</a>
+                            <a href="#volunteer-opportunities" class="btn btn-primary mt-auto">Volunteer With Us</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Interactive Donation Flow -->
+    </section>    <!-- Interactive Donation Flow -->
     <section id="donation-path" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Support Our Cause</h2>
-            <!-- Donation Stepper (Simplified) -->            <div class="progress mb-4 progress-thick">
+            <h2 class="text-center mb-5" data-aos="fade-up">Support Our Cause</h2>
+            <!-- Donation Stepper (Simplified) -->
+            <div class="progress mb-4 progress-thick" data-aos="fade-up" data-aos-delay="100">
                 <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">Step 1: Amount</div>
             </div>
 
             <div class="row justify-content-center g-4">
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card text-center h-100">
                         <div class="card-header bg-primary text-white">
                             Most Impact
-                        </div>                        <div class="card-body">
+                        </div>
+                        <div class="card-body">
                             <h3 class="card-title display-5">$50</h3>
                             <p class="card-text">Training for one woman recycler, providing skills and empowerment.</p>
                             <button class="btn btn-primary">Choose Amount</button>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card text-center h-100">
                         <div class="card-body">
                             <h3 class="card-title display-5">$200</h3>
@@ -98,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
                     <div class="card text-center h-100">
                         <div class="card-body">
                             <h3 class="card-title display-5">Custom</h3>
@@ -109,16 +120,14 @@
                     </div>
                 </div>
             </div>
-            <p class="text-center mt-4"><em>Further steps (Details & Confirm) would be part of a full donation form.</em></p>
+            <p class="text-center mt-4" data-aos="fade-up" data-aos-delay="500"><em>Further steps (Details & Confirm) would be part of a full donation form.</em></p>
         </div>
-    </section>
-
-    <!-- Partnership Tier Visualizer -->
-    <section id="partnership-tiers" class="py-5 bg-light">
+    </section>    <!-- Partnership Tier Visualizer -->
+    <section id="partnership-tiers" class="py-5 bg-body-secondary">
         <div class="container">
-            <h2 class="text-center mb-5">Partnership Opportunities</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">Partnership Opportunities</h2>
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card h-100 text-center">
                         <div class="card-header">
                             <h3 class="h5 mb-0">Community Supporter</h3>
@@ -129,7 +138,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card h-100 text-center border-primary">
                          <div class="card-header bg-primary text-white">
                             <h3 class="h5 mb-0">Impact Partner</h3>
@@ -140,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card h-100 text-center">
                         <div class="card-header">
                             <h3 class="h5 mb-0">Strategic Ally</h3>
@@ -153,54 +162,49 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Volunteer Skill Matrix -->
+    </section>    <!-- Volunteer Skill Matrix -->
     <section id="volunteer-opportunities" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Volunteer Your Skills</h2>
+            <h2 class="text-center mb-5" data-aos="fade-up">Volunteer Your Skills</h2>
             <div class="row g-4">
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card text-center h-100">
                         <div class="card-body">
-                            <i class="bi bi-megaphone-fill fs-1 text-info mb-3"></i> <!-- Placeholder for icon -->
+                            <i class="bi bi-megaphone-fill fs-1 text-primary mb-3"></i>
                             <h4 class="card-title">Community Education</h4>
                             <p class="card-text">Help us run workshops and awareness campaigns.</p>
-                            <a href="contact.html?subject=volunteer-education" class="btn btn-info text-white">Offer Your Skills</a>
+                            <a href="contact.html?subject=volunteer-education" class="btn btn-primary">Offer Your Skills</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card text-center h-100">
                         <div class="card-body">
-                            <i class="bi bi-tools fs-1 text-info mb-3"></i> <!-- Placeholder for icon -->
+                            <i class="bi bi-tools fs-1 text-success mb-3"></i>
                             <h4 class="card-title">Logistics & Operations</h4>
                             <p class="card-text">Support our collection and recycling processes.</p>
-                            <a href="contact.html?subject=volunteer-logistics" class="btn btn-info text-white">Offer Your Skills</a>
+                            <a href="contact.html?subject=volunteer-logistics" class="btn btn-success">Offer Your Skills</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card text-center h-100">
                         <div class="card-body">
-                            <i class="bi bi-palette-fill fs-1 text-info mb-3"></i> <!-- Placeholder for icon -->
+                            <i class="bi bi-palette-fill fs-1 text-danger mb-3"></i>
                             <h4 class="card-title">Creative & Media</h4>
                             <p class="card-text">Assist with content creation, design, and storytelling.</p>
-                            <a href="contact.html?subject=volunteer-media" class="btn btn-info text-white">Offer Your Skills</a>
+                            <a href="contact.html?subject=volunteer-media" class="btn btn-danger">Offer Your Skills</a>
                         </div>
                     </div>
                 </div>
             </div>
-             <p class="text-center mt-4">Use Bootstrap Icons or Font Awesome for actual icons.</p>
         </div>
-    </section>
-
-    <!-- Impact Simulator (Simplified) -->
-    <section class="py-5 bg-light">
+    </section>    <!-- Impact Simulator (Simplified) -->
+    <section class="py-5 bg-body-secondary">
         <div class="container">
-            <h2 class="text-center mb-4">Visualize Your Impact</h2>
+            <h2 class="text-center mb-4" data-aos="fade-up">Visualize Your Impact</h2>
             <div class="row justify-content-center">
-                <div class="col-md-8">
+                <div class="col-md-8" data-aos="fade-up" data-aos-delay="100">
                     <label for="donationSlider" class="form-label">Donation Amount: <span id="donationValue">$500</span></label>
                     <input type="range" class="form-range" id="donationSlider" min="0" max="1000" value="500" oninput="updateImpact(this.value)">
                     <div class="text-center mt-3">
@@ -212,13 +216,21 @@
         </div>
     </section>
 
-    <div id="footer-placeholder"></div>
-
-    <!-- Bootstrap JS Bundle -->
+    <div id="footer-placeholder"></div>    <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="scripts/main.js"></script> -->
-    <!-- <script src="scripts/involvementInteractions.js"></script> -->
-    <script>        document.addEventListener('DOMContentLoaded', function() {
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Main JS for scroll indicators -->
+    <script src="scripts/main.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
             fetch('components/header.html')
                 .then(response => response.text())
                 .then(html => {

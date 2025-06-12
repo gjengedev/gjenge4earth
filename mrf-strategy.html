@@ -399,27 +399,29 @@
         }
     </style>
 </head>
-<body>
-    <!-- Navigation -->
+<body>    <!-- Navigation -->
     <div id="header-placeholder"></div>
 
     <!-- Hero Section -->
-    <section class="py-5 text-center bg-light">
+    <header class="position-relative py-5 text-center text-white" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/MRF/Crushers.png') center/cover no-repeat; min-height: 80vh; display: flex; align-items: center; justify-content: center;">
         <div class="container">
-            <h1 class="display-4 mb-4" data-aos="fade-up">Material Recovery Facility Strategy</h1>
-            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
-                Scaling sustainable waste management systems through strategic partnerships and community empowerment
-            </p>
-            <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <h1 class="display-4 fw-bold animate-slide-up">Material Recovery Facility <span class="text-primary">Strategy</span></h1>
+            <p class="lead">Scaling sustainable waste management systems through strategic partnerships and community empowerment</p>
+            <div class="row justify-content-center mt-4">
                 <div class="col-md-10">
-                    <div class="alert alert-info border-0 shadow-sm">
+                    <div class="alert alert-info border-0 shadow-sm bg-white bg-opacity-90 text-dark">
                         <i class="bi bi-info-circle-fill me-2"></i>
                         <strong>Our Vision:</strong> Build a self-sustaining circular economy by scaling plastic recovery operations, creating livelihoods and reducing waste pollution through Material Recovery Facilities.
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+        
+        <!-- Scroll indicator -->
+        <div class="position-absolute bottom-0 start-50 translate-middle-x mb-4">
+            <i class="bi bi-chevron-down text-white scroll-indicator"></i>
+        </div>
+    </header>
 
     <!-- Key Statistics Overview -->
     <section class="py-5">
@@ -935,222 +937,7 @@
 
     <!-- Bootstrap JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script>
-        // Global chart storage for proper cleanup
-        let chartInstances = {};
-        
-        // Utility function to get current theme colors
-        function getThemeColors() {
-            const isDarkTheme = document.documentElement.getAttribute('data-bs-theme') === 'dark';
-            return {
-                textColor: isDarkTheme ? '#ffffff' : '#333333',
-                gridColor: isDarkTheme ? '#444444' : '#e0e0e0',
-                borderColor: isDarkTheme ? '#333' : '#fff'
-            };
-        }
-          // Function to destroy existing charts
-        function destroyCharts() {
-            try {
-                Object.values(chartInstances).forEach(chart => {
-                    if (chart && typeof chart.destroy === 'function') {
-                        chart.destroy();
-                    }
-                });
-                chartInstances = {};
-                console.log('Charts destroyed successfully');
-            } catch (error) {
-                console.error('Error destroying charts:', error);
-                // Force reset even if destruction fails
-                chartInstances = {};
-            }
-        }// Function to initialize charts with current theme
-        function initializeCharts() {
-            // Prevent duplicate initializations
-            if (Object.keys(chartInstances).length > 0) {
-                console.log('Charts already initialized, skipping...');
-                return;
-            }
-            
-            const colors = getThemeColors();
-            
-            // Waste Management Chart (Doughnut)
-            const wasteCanvas = document.getElementById('wasteManagementChart');
-            if (wasteCanvas) {
-                const wasteCtx = wasteCanvas.getContext('2d');
-                chartInstances.wasteChart = new Chart(wasteCtx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Mismanaged Waste', 'Recycled Waste'],
-                        datasets: [{
-                            data: [93, 7],
-                            backgroundColor: ['#dc3545', '#28a745'],
-                            borderWidth: 2,
-                            borderColor: colors.borderColor
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                position: 'bottom',
-                                labels: {
-                                    color: colors.textColor,
-                                    padding: 20
-                                }
-                            }
-                        },
-                        animation: {
-                            onComplete: function() {
-                                wasteCanvas.classList.add('loaded');
-                            }
-                        }
-                    }
-                });
-            }
-
-            // MRF Scaling Timeline Chart
-            const mrfCanvas = document.getElementById('mrfScalingChart');
-            if (mrfCanvas) {
-                const mrfCtx = mrfCanvas.getContext('2d');
-                chartInstances.mrfChart = new Chart(mrfCtx, {
-                    type: 'bar',
-                    data: {
-                        labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
-                        datasets: [{
-                            label: 'MRFs Established',
-                            data: [1, 2, 4, 6, 15],
-                            backgroundColor: 'rgba(13, 110, 253, 0.8)',
-                            borderColor: 'rgba(13, 110, 253, 1)',
-                            borderWidth: 2
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                labels: {
-                                    color: colors.textColor
-                                }
-                            }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    color: colors.textColor
-                                },
-                                grid: {
-                                    color: colors.gridColor
-                                }
-                            },
-                            x: {
-                                ticks: {
-                                    color: colors.textColor
-                                },
-                                grid: {
-                                    color: colors.gridColor
-                                }
-                            }
-                        },
-                        animation: {
-                            onComplete: function() {
-                                mrfCanvas.classList.add('loaded');
-                            }
-                        }
-                    }
-                });
-            }
-
-            // Job Creation Chart
-            const jobCanvas = document.getElementById('jobCreationChart');
-            if (jobCanvas) {
-                const jobCtx = jobCanvas.getContext('2d');
-                chartInstances.jobChart = new Chart(jobCtx, {
-                    type: 'line',
-                    data: {
-                        labels: ['Year 1', 'Year 2', 'Year 3', 'Year 4', 'Year 5'],
-                        datasets: [{
-                            label: 'Cumulative Jobs Created',
-                            data: [50, 100, 200, 350, 500],
-                            backgroundColor: 'rgba(40, 167, 69, 0.2)',
-                            borderColor: 'rgba(40, 167, 69, 1)',
-                            borderWidth: 3,
-                            fill: true,
-                            tension: 0.4
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                labels: {
-                                    color: colors.textColor
-                                }
-                            }
-                        },
-                        scales: {
-                            y: {
-                                beginAtZero: true,
-                                ticks: {
-                                    color: colors.textColor
-                                },
-                                grid: {
-                                    color: colors.gridColor
-                                }
-                            },
-                            x: {
-                                ticks: {
-                                    color: colors.textColor
-                                },
-                                grid: {
-                                    color: colors.gridColor
-                                }
-                            }
-                        },
-                        animation: {
-                            onComplete: function() {
-                                jobCanvas.classList.add('loaded');
-                            }
-                        }
-                    }
-                });
-            }
-        }
-          // Theme change observer with debouncing and single instance
-        let themeObserver = null;
-        let themeChangeTimeout = null;
-        
-        function setupThemeObserver() {
-            // Prevent multiple observers
-            if (themeObserver) {
-                return;
-            }
-            
-            themeObserver = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.type === 'attributes' && mutation.attributeName === 'data-bs-theme') {
-                        // Debounce theme changes to prevent rapid chart recreations
-                        clearTimeout(themeChangeTimeout);
-                        themeChangeTimeout = setTimeout(() => {
-                            try {
-                                destroyCharts();
-                                setTimeout(initializeCharts, 150); // Increased delay for stability
-                            } catch (error) {
-                                console.error('Error updating charts for theme change:', error);
-                            }
-                        }, 200); // Debounce delay
-                    }
-                });
-            });
-              themeObserver.observe(document.documentElement, {
-                attributes: true,
-                attributeFilter: ['data-bs-theme']
-            });
-        }
-        
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>    <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Prevent multiple initializations
             if (window.mrfStrategyInitialized) {
@@ -1201,19 +988,11 @@
                                 script.remove();
                             } catch (error) {
                                 console.error('Error executing header script:', error);
-                            }                        });
-                        
-                        // Setup theme observer after header is loaded (only once)
-                        setupThemeObserver();
+                            }
+                        });
                     }
                 })
-                .catch(error => {
-                    console.error('Error loading header:', error);
-                    // Setup theme observer as fallback (only if not already set up)
-                    if (!themeObserver) {
-                        setupThemeObserver();
-                    }
-                });
+                .catch(error => console.error('Error loading header:', error));
                 
             // Load Footer with enhanced error handling
             fetch('components/footer.html')
@@ -1246,69 +1025,7 @@
                         });
                     }
                 })
-                .catch(error => console.error('Error loading footer:', error));            // Initialize charts after DOM is fully loaded
-            setTimeout(() => {
-                try {
-                    if (typeof Chart !== 'undefined') {
-                        // Only initialize if not already done
-                        if (Object.keys(chartInstances).length === 0) {
-                            initializeCharts();
-                        }
-                    } else {
-                        console.warn('Chart.js library not loaded');
-                    }
-                } catch (error) {
-                    console.error('Error initializing charts:', error);
-                }
-            }, 500); // Delay to ensure all components are loaded
-        });          // Cleanup on page unload to prevent memory leaks
-        window.addEventListener('beforeunload', function() {
-            // Clean up charts
-            destroyCharts();
-            
-            // Clean up theme observer
-            if (themeObserver) {
-                themeObserver.disconnect();
-                themeObserver = null;
-            }
-            
-            // Clear any pending timeouts
-            if (themeChangeTimeout) {
-                clearTimeout(themeChangeTimeout);
-                themeChangeTimeout = null;
-            }
-        });
-        
-        // Handle window resize for chart responsiveness
-        let resizeTimeout;
-        window.addEventListener('resize', function() {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                Object.values(chartInstances).forEach(chart => {
-                    if (chart && typeof chart.resize === 'function') {
-                        chart.resize();
-                    }
-                });
-            }, 250);
-        });
-        
-        // Handle visibility change to pause/resume animations
-        document.addEventListener('visibilitychange', function() {
-            if (document.hidden) {
-                // Page is hidden, pause any ongoing animations
-                Object.values(chartInstances).forEach(chart => {
-                    if (chart && chart.options && chart.options.animation) {
-                        chart.options.animation.duration = 0;
-                    }
-                });
-            } else {
-                // Page is visible, restore animations
-                Object.values(chartInstances).forEach(chart => {
-                    if (chart && chart.options && chart.options.animation) {
-                        chart.options.animation.duration = 800;
-                    }
-                });
-            }
+                .catch(error => console.error('Error loading footer:', error));
         });
     </script>
 </body>

@@ -47,16 +47,211 @@
         <a href="get-involved.html" class="btn btn-primary">Get Involved</a>
       </div>
     </div>
-  </div>
-  <div class="text-center py-3 mt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+  </div>  <div class="text-center py-3 mt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
     <p class="mb-0">&copy; 2025 Gjenge 4 Earth. All rights reserved.</p>
-  </div>  <button class="btn btn-primary rounded-circle position-fixed bottom-0 end-0 m-3" style="width: 44px; height: 44px; font-size: 1.5rem;" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    &uarr;
+  </div>
+    <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" class="btn scroll-top-btn position-fixed" aria-label="Scroll to top" title="Back to top">
+    <i class="bi bi-chevron-up"></i>
   </button>
 </footer>
 
 <style>
   .footer-component {
     transition: all 0.3s ease;
+  }  /* Scroll to Top Button Styling */
+  .scroll-top-btn {
+    bottom: 2rem !important;
+    right: 2rem !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 50% !important;
+    background: var(--bs-primary) !important;
+    border: 2px solid rgba(255,255,255,0.1) !important;
+    color: white !important;
+    font-size: 1.1rem !important;
+    z-index: 9999 !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    backdrop-filter: blur(10px) !important;
+  }
+  
+  /* Button hidden state */
+  .scroll-top-btn.hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(10px) !important;
+  }
+  
+  /* Hover effects */
+  .scroll-top-btn:hover {
+    background: var(--bs-primary) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+    border-color: var(--bs-primary) !important;
+    color: white !important;
+  }
+  
+  /* Active state */
+  .scroll-top-btn:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  /* Icon animation */
+  .scroll-top-btn i {
+    transition: transform 0.3s ease !important;
+  }
+  
+  .scroll-top-btn:hover i {
+    transform: translateY(-2px) !important;
+  }
+  
+  /* Dark theme adjustments */
+  [data-bs-theme="dark"] .scroll-top-btn {
+    background: rgba(13, 110, 253, 0.9) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  }
+  
+  [data-bs-theme="dark"] .scroll-top-btn:hover {
+    background: var(--bs-primary) !important;
+    border-color: var(--bs-primary) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5) !important;
+  }
+  
+  /* Light theme adjustments */
+  [data-bs-theme="light"] .scroll-top-btn {
+    background: var(--bs-primary) !important;
+    border-color: rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+  
+  [data-bs-theme="light"] .scroll-top-btn:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+  }
+  
+  /* Hover effects */
+  .scroll-top-btn:hover {
+    background: var(--bs-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    border-color: var(--bs-primary);
+  }
+  
+  /* Active state */
+  .scroll-top-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Icon animation */
+  .scroll-top-btn i {
+    transition: transform 0.3s ease;
+  }
+  
+  .scroll-top-btn:hover i {
+    transform: translateY(-2px);
+  }
+  
+  /* Dark theme adjustments */
+  [data-bs-theme="dark"] .scroll-top-btn {
+    background: rgba(13, 110, 253, 0.9);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  [data-bs-theme="dark"] .scroll-top-btn:hover {
+    background: var(--bs-primary);
+    border-color: var(--bs-primary);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Light theme adjustments */
+  [data-bs-theme="light"] .scroll-top-btn {
+    background: var(--bs-primary);
+    border-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  [data-bs-theme="light"] .scroll-top-btn:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .scroll-top-btn {
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 44px;
+      height: 44px;
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .scroll-top-btn {
+      bottom: 1rem;
+      right: 1rem;
+      width: 40px;
+      height: 40px;
+      font-size: 1rem;
+    }
   }
 </style>
+
+<script>
+  // Scroll to Top Button Functionality
+  (function() {
+    // Function to initialize the scroll button
+    function initScrollButton() {
+      const scrollTopBtn = document.getElementById('scrollTopBtn');
+      
+      if (!scrollTopBtn) {
+        console.warn('Scroll to top button not found');
+        return;
+      }
+      
+      // Show/hide button based on scroll position
+      function toggleScrollButton() {
+        if (window.pageYOffset > 300) {
+          scrollTopBtn.classList.remove('hidden');
+        } else {
+          scrollTopBtn.classList.add('hidden');
+        }
+      }
+      
+      // Smooth scroll to top
+      function scrollToTop(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      }
+      
+      // Event listeners
+      window.addEventListener('scroll', toggleScrollButton);
+      scrollTopBtn.addEventListener('click', scrollToTop);
+      
+      // Initial check
+      toggleScrollButton();
+      
+      console.log('Scroll to top button initialized');
+    }
+    
+    // Initialize immediately if DOM is ready, otherwise wait
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initScrollButton);
+    } else {
+      // DOM is already ready, initialize with a small delay to ensure elements are rendered
+      setTimeout(initScrollButton, 100);
+    }
+  })();
+</script>

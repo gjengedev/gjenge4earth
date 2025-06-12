@@ -24,13 +24,42 @@
         import { loadComponents } from './scripts/components/navigation.js';
         document.addEventListener('DOMContentLoaded', () => {
             loadComponents();        });    </script>
-    -->
-      <script>
+    -->      <script>
         // Bootstrap native theme initialization - runs immediately to prevent flash
         (function() {
             const savedTheme = localStorage.getItem('theme') || 'dark';
             document.documentElement.setAttribute('data-bs-theme', savedTheme);
         })();    </script>
+    
+    <style>
+        /* Dumpsite image card hover effects */
+        .dumpsite-image-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .dumpsite-image-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .dumpsite-image-card img {
+            transition: transform 0.3s ease;
+        }
+        
+        .dumpsite-image-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Problem statistics styling */
+        .problem-stats .stat-card {
+            transition: transform 0.2s ease;
+        }
+        
+        .problem-stats .stat-card:hover {
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -97,8 +126,7 @@
                 </div>
             </div>
         </div>
-    </section>    <!-- Problem Statement Section -->
-    <section class="py-5 section-light" id="impact">
+    </section>    <!-- Problem Statement Section -->    <section class="py-5 section-light" id="impact">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
@@ -110,6 +138,119 @@
                         Plastic pollution is a crisis requiring urgent action. Without intervention, this waste persists for decades, 
                         harming wildlife and human health while communities lack sustainable building materials and economic opportunities.
                     </p>
+                </div>
+            </div>
+              <!-- Dumpsite Reality Images -->
+            <div class="row g-4 mt-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-12 text-center mb-3">
+                    <h4 class="fw-bold text-muted">The Reality: Waste Sites Across Kenya</h4>
+                    <p class="text-muted">These images show the scale of waste accumulation in communities we serve</p>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="position-relative overflow-hidden rounded shadow-sm dumpsite-image-card">
+                        <img src="images/Dumpsite/20250501_165606.jpg" class="img-fluid w-100" alt="Waste accumulation site" style="height: 200px; object-fit: cover;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-25 d-flex align-items-end">
+                            <div class="p-3 text-white">
+                                <small class="fw-bold">Community Waste Site</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="position-relative overflow-hidden rounded shadow-sm dumpsite-image-card">
+                        <img src="images/Dumpsite/20250501_172255.jpg" class="img-fluid w-100" alt="Plastic waste accumulation" style="height: 200px; object-fit: cover;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-25 d-flex align-items-end">
+                            <div class="p-3 text-white">
+                                <small class="fw-bold">Plastic Waste Buildup</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="position-relative overflow-hidden rounded shadow-sm dumpsite-image-card">
+                        <img src="images/Dumpsite/20250501_170851.jpg" class="img-fluid w-100" alt="Environmental impact of waste" style="height: 200px; object-fit: cover;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-25 d-flex align-items-end">
+                            <div class="p-3 text-white">
+                                <small class="fw-bold">Environmental Impact</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="position-relative overflow-hidden rounded shadow-sm dumpsite-image-card">
+                        <img src="images/Dumpsite/20250501_173911.jpg" class="img-fluid w-100" alt="Scale of waste problem" style="height: 200px; object-fit: cover;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-25 d-flex align-items-end">
+                            <div class="p-3 text-white">
+                                <small class="fw-bold">Scale of the Problem</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Dumpsite Images Row -->
+            <div class="row g-4 mt-2" data-aos="fade-up" data-aos-delay="700">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="800">
+                    <div class="position-relative overflow-hidden rounded shadow-sm dumpsite-image-card">
+                        <img src="images/Dumpsite/20250501_165620.jpg" class="img-fluid w-100" alt="Waste collection area" style="height: 180px; object-fit: cover;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-25 d-flex align-items-end">
+                            <div class="p-3 text-white">
+                                <small class="fw-bold">Waste Collection Area</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="900">
+                    <div class="position-relative overflow-hidden rounded shadow-sm dumpsite-image-card">
+                        <img src="images/Dumpsite/20250501_172302.jpg" class="img-fluid w-100" alt="Community affected by waste" style="height: 180px; object-fit: cover;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-25 d-flex align-items-end">
+                            <div class="p-3 text-white">
+                                <small class="fw-bold">Community Impact</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="1000">
+                    <div class="position-relative overflow-hidden rounded shadow-sm dumpsite-image-card">
+                        <img src="images/Dumpsite/20250501_172454.jpg" class="img-fluid w-100" alt="Overwhelming waste accumulation" style="height: 180px; object-fit: cover;">
+                        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-25 d-flex align-items-end">
+                            <div class="p-3 text-white">
+                                <small class="fw-bold">Overwhelming Accumulation</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Problem Statistics -->
+            <div class="row justify-content-center mt-5" data-aos="fade-up" data-aos-delay="700">
+                <div class="col-lg-10">
+                    <div class="row text-center g-4">
+                        <div class="col-md-3">
+                            <div class="p-3 bg-danger bg-opacity-10 rounded">
+                                <h3 class="display-6 fw-bold text-danger">24M+</h3>
+                                <p class="mb-0 text-muted">Tons of waste annually</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="p-3 bg-warning bg-opacity-10 rounded">
+                                <h3 class="display-6 fw-bold text-warning">93%</h3>
+                                <p class="mb-0 text-muted">Mismanaged waste</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="p-3 bg-primary bg-opacity-10 rounded">
+                                <h3 class="display-6 fw-bold text-primary">500+</h3>
+                                <p class="mb-0 text-muted">Years to decompose</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="p-3 bg-success bg-opacity-10 rounded">
+                                <h3 class="display-6 fw-bold text-success">0%</h3>
+                                <p class="mb-0 text-muted">Current recycling rate</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -189,48 +330,79 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Partners Carousel -->
+    </section>    <!-- Partners Carousel -->
     <section class="partners-section py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Our Partners</h2>
-            <div id="partnersCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner"><div class="carousel-item active">
-                        <div class="row justify-content-center align-items-center g-3">                            <div class="col-auto"><img src="images/partners/bounty logo (1).png" class="d-block partner-logo" alt="Bounty Logo"></div>
-                            <div class="col-auto"><img src="images/partners/cocacola-logo (1).jpg" class="d-block partner-logo" alt="Coca-Cola Logo"></div>
-                            <div class="col-auto"><img src="images/partners/download (1) (1).png" class="d-block partner-logo" alt="Partner Logo"></div>
-                        </div>
+            <h2 class="text-center mb-5" style="color: black;">Our Partners</h2>
+            <div class="partners-slider-container">
+                <div class="partners-slider">
+                    <!-- First set of logos -->
+                    <div class="partner-item">
+                        <img src="images/partners/bounty logo (1).png" class="partner-logo" alt="Bounty Logo">
                     </div>
-                    <div class="carousel-item">
-                        <div class="row justify-content-center align-items-center g-3">                            <div class="col-auto"><img src="images/partners/Habitat for humanity (1).png" class="d-block partner-logo" alt="Habitat for Humanity Logo"></div>
-                            <div class="col-auto"><img src="images/partners/images (1).jpeg" class="d-block partner-logo" alt="Partner Logo"></div>
-                            <div class="col-auto"><img src="images/partners/London-Distillers (1).png" class="d-block partner-logo" alt="London Distillers Logo"></div>
-                        </div>
+                    <div class="partner-item">
+                        <img src="images/partners/cocacola-logo (1).jpg" class="partner-logo" alt="Coca-Cola Logo">
                     </div>
-                     <div class="carousel-item">
-                        <div class="row justify-content-center align-items-center g-3">                            <div class="col-auto"><img src="images/partners/ministry_of_Transport (1).png" class="d-block partner-logo" alt="Ministry of Transport Logo"></div>
-                            <div class="col-auto"><img src="images/partners/start somewhere (1).png" class="d-block partner-logo" alt="Start Somewhere Logo"></div>
-                            <div class="col-auto"><img src="images/partners/UNEP - Transparent_1 (1).png" class="d-block partner-logo" alt="UNEP Logo"></div>
-                        </div>
+                    <div class="partner-item">
+                        <img src="images/partners/download (1) (1).png" class="partner-logo" alt="Partner Logo">
                     </div>
-                    <div class="carousel-item">
-                        <div class="row justify-content-center align-items-center g-3">
-                             <div class="col-auto"><img src="images/partners/victory-farms (1).png" class="d-block partner-logo" alt="Victory Farms Logo"></div>
-                        </div>
+                    <div class="partner-item">
+                        <img src="images/partners/Habitat for humanity (1).png" class="partner-logo" alt="Habitat for Humanity Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/images (1).jpeg" class="partner-logo" alt="Partner Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/London-Distillers (1).png" class="partner-logo" alt="London Distillers Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/ministry_of_Transport (1).png" class="partner-logo" alt="Ministry of Transport Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/start somewhere (1).png" class="partner-logo" alt="Start Somewhere Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/UNEP - Transparent_1 (1).png" class="partner-logo" alt="UNEP Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/victory-farms (1).png" class="partner-logo" alt="Victory Farms Logo">
+                    </div>
+                    
+                    <!-- Duplicate set for seamless loop -->
+                    <div class="partner-item">
+                        <img src="images/partners/bounty logo (1).png" class="partner-logo" alt="Bounty Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/cocacola-logo (1).jpg" class="partner-logo" alt="Coca-Cola Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/download (1) (1).png" class="partner-logo" alt="Partner Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/Habitat for humanity (1).png" class="partner-logo" alt="Habitat for Humanity Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/images (1).jpeg" class="partner-logo" alt="Partner Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/London-Distillers (1).png" class="partner-logo" alt="London Distillers Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/ministry_of_Transport (1).png" class="partner-logo" alt="Ministry of Transport Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/start somewhere (1).png" class="partner-logo" alt="Start Somewhere Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/UNEP - Transparent_1 (1).png" class="partner-logo" alt="UNEP Logo">
+                    </div>
+                    <div class="partner-item">
+                        <img src="images/partners/victory-farms (1).png" class="partner-logo" alt="Victory Farms Logo">
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#partnersCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#partnersCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
-    </section>    <!-- JOIN THE TRANSFORMATION Section -->
+    </section><!-- JOIN THE TRANSFORMATION Section -->
     <section class="py-5 section-light" id="join">
         <div class="container">
             <div class="text-center mb-5">
@@ -305,21 +477,20 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <div id="footer-placeholder"></div>    <!-- Bootstrap JS Bundle with Popper -->
+    </section>    <!-- Footer -->
+    <div id="footer-placeholder"></div><!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Footer -->
-    <script>
-        // Initialize AOS
+    <script>        // Initialize AOS
         AOS.init({
             duration: 800,
             once: true,
             offset: 100
-        });        document.addEventListener('DOMContentLoaded', function() {
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
             // Load Header and Footer
             fetch('components/header.html')
                 .then(response => response.text())
