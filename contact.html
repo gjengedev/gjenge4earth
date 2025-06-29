@@ -64,14 +64,19 @@
                         <div class="mb-3">
                             <label for="email" class="form-label">Email Address</label>
                             <input type="email" class="form-control" id="email" name="email" required>
-                        </div>
-                        <div class="mb-3">
+                        </div>                        <div class="mb-3">
                             <label for="subject" class="form-label">Subject</label>
                             <select class="form-select" id="subject" name="subject" required>
                                 <option value="">Select a topic</option>
                                 <option value="volunteer">Volunteering</option>
+                                <option value="Volunteer - Community Education">Volunteer - Community Education</option>
+                                <option value="Volunteer - Logistics & Operations">Volunteer - Logistics & Operations</option>
+                                <option value="Volunteer - Creative & Media">Volunteer - Creative & Media</option>
                                 <option value="donate">Donations</option>
                                 <option value="partnership">Partnerships</option>
+                                <option value="Community Supporter">Community Supporter</option>
+                                <option value="Impact Partner">Impact Partner</option>
+                                <option value="Strategic Ally">Strategic Ally</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -99,8 +104,8 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Contact Details</h5>
-                            <p><strong>Email:</strong>
-                                <a href="mailto:info@gjengeearth.org">info@gjengeearth.org</a>
+                            <p style="color: var(--text-primary);"><strong>Email:</strong>
+                                <a href="mailto:info@gjenge4earth.org">info@gjenge4earth.org</a>
                             </p>
                             <p><strong>Phone:</strong>
                                 <a href="tel:+254758671491">+254 758 671 491</a>
@@ -177,8 +182,31 @@
                         script.remove();
                     });
                 })
-                .catch(error => console.error('Error loading footer:', error));
-        });
+                .catch(error => console.error('Error loading footer:', error));        });
+        
+        // Handle URL parameters for pre-filling subject field
+        function handleURLParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const subject = urlParams.get('subject');
+            
+            if (subject) {
+                const subjectSelect = document.getElementById('subject');
+                if (subjectSelect) {
+                    // Find the option with matching value
+                    const options = subjectSelect.options;
+                    for (let i = 0; i < options.length; i++) {
+                        if (options[i].value === subject) {
+                            subjectSelect.selectedIndex = i;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        
+        // Call the function after page loads
+        handleURLParameters();
+        
         // Basic form validation (Bootstrap handles most of it via attributes)
         // You can add more sophisticated validation here if needed.
         const form = document.getElementById('contactForm');
