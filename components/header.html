@@ -36,8 +36,16 @@
           <a class="nav-link" href="contact.html" data-page="contact">Contact</a>
         </li>
       </ul>
-      <div>
-        <div class="d-flex align-items-center ms-lg-2 mt-2 mt-lg-0 w-100 w-lg-auto justify-content-lg-end justify-content-between">
+      <div class="d-flex align-items-center ms-lg-2 mt-2 mt-lg-0">
+        <div class="dropdown me-2">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-translate"></i>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                <li><a class="dropdown-item" href="#" id="lang-fr">Français</a></li>
+                <li><a class="dropdown-item" href="#" id="lang-de">Deutsch</a></li>
+            </ul>
+        </div>
         <button class="btn btn-outline-secondary me-3" id="themeToggle" title="Toggle theme">
           <i class="bi bi-sun-fill" id="themeIcon"></i>
         </button>
@@ -46,8 +54,8 @@
           <img src="images/gjenge_no_bg.png" alt="Gjenge Makers" class="logo-img">
         </a>
         </div>
-        <div class="align-items-center">
-          <div class="header-socials p-1">
+      <div class="align-items-center">
+          <div class="header-socials">
             <a href="https://x.com/gjenge4earth" target="_blank" aria-label="Twitter" class="social-link me-2"><i class="fab fa-x-twitter fa-lg social-icon"></i></a>
             <a href="https://facebook.com/" target="_blank" aria-label="Facebook" class="social-link me-2"><i class="fab fa-facebook-f fa-lg social-icon"></i></a>
             <a href="https://www.instagram.com/gjenge4earth/" target="_blank" aria-label="Instagram" class="social-link me-2"><i class="fab fa-instagram fa-lg social-icon"></i></a>
@@ -101,6 +109,7 @@
   z-index: 10;
   background: rgba(0,0,0,0.3);
   transition: background 0.3s;
+  margin: 2rem 0;
 }
 [data-bs-theme="light"] .header-socials {
     background: rgba(255,255,255,0.8);
@@ -131,11 +140,12 @@
   .d-flex.align-items-center.ms-lg-2.mt-2.mt-lg-0.w-100.w-lg-auto.justify-content-lg-end.justify-content-start {
     width: 100%;
     justify-content: flex-start !important;
-    margin-top: 1rem;
+    margin-top: 3rem;
     
   }
   .header-socials{
-    margin: 2rem 0;
+    padding: 0 0;
+    /* padding-top: 5rem 0; */
     align-items: center;
     justify-content: center;
   }
@@ -219,4 +229,27 @@
       document.title = '🌍 ' + title;
     }
   });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const currentPage = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+        }
+    });
+
+    // Language switcher logic
+    const langFr = document.getElementById('lang-fr');
+    const langDe = document.getElementById('lang-de');
+    const basePageName = currentPage.replace('.html', '');
+
+    if (langFr) {
+        langFr.href = `${basePageName}-fr.html`;
+    }
+    if (langDe) {
+        langDe.href = `${basePageName}-de.html`;
+    }
+});
 </script>
