@@ -107,7 +107,7 @@
   transform: translateX(-50%);
   /* bottom: 0; */
   z-index: 10;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0);
   transition: background 0.3s;
   margin: 2rem 0;
 }
@@ -212,10 +212,10 @@
     });
   });
 
-  // Add logo to page title
+  // Add G4E logo to page title (favicon)
   document.addEventListener('DOMContentLoaded', function() {
     const logoFavicon = 'images/G4E-no-bg.png';
-    const title = document.title;
+    
     // Add favicon if not present
     if (!document.querySelector('link[rel="icon"]')) {
       const link = document.createElement('link');
@@ -224,9 +224,14 @@
       link.href = logoFavicon;
       document.head.appendChild(link);
     }
-    // Optionally, add emoji or text to title for visual effect
-    if (!title.startsWith('🌍')) {
-      document.title = '🌍 ' + title;
+    
+    // Also add shortcut icon for better browser support
+    if (!document.querySelector('link[rel="shortcut icon"]')) {
+      const shortcutLink = document.createElement('link');
+      shortcutLink.rel = 'shortcut icon';
+      shortcutLink.type = 'image/png';
+      shortcutLink.href = logoFavicon;
+      document.head.appendChild(shortcutLink);
     }
   });
 
